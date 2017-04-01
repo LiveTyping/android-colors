@@ -1,0 +1,25 @@
+.appbar {
+  color: #545454;
+  background-color: #B7B7B7;
+  width: 100%;
+  display: flex;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-shadow: 0 2px 4px 0 rgba(87,87,87,0.50);
+  flex: 1 100%;
+  z-index: 1200;
+}
+
+.appbar__title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  letter-spacing: 0;
+  font-size: 24px;
+  font-weight: 400;
+  color: #545454;
+  height: 64px;
+  line-height: 64px;
+  flex: 1 1 0;
+}

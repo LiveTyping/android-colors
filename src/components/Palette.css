@@ -1,0 +1,21 @@
+.palette {
+  flex: 1 100%;
+  background-color: #F0F0F0;
+  z-index: 1100;
+  padding: 24px;
+}
+
+@media all and (min-width: 1280px) {
+  .palette {
+    order: 2;
+    flex: 0 462px;
+  }
+}
+
+.palette__header {
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #545454;
+  margin: 0 0 20px 10px;
+}
