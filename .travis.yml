@@ -12,6 +12,7 @@ before_install:
   # - set -x  # all executed commands are printed to the terminal (serves for debugging :muscle:)
 
 script:
+  - npm install
   - npm run test
   - npm run deploy
 
