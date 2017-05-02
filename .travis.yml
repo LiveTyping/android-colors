@@ -1,0 +1,31 @@
+sudo: false
+
+services:
+  # -
+
+env:
+  global:
+    - NAME=android-colors
+
+before_install:
+  - set -e  # stop the execution of a script if a command or pipeline has an error
+  # - set -x  # all executed commands are printed to the terminal (serves for debugging :muscle:)
+
+script:
+  - npm run test
+  - npm run deploy
+
+after_script:
+  # -
+
+after_success:
+  # -
+
+notifications:
+  email: false
+  # slack:
+    # on_success: change
+    # on_failure: always
+    # on_pull_requests: true
+    # rooms:
+    #   - secure: ""
