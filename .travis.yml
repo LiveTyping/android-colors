@@ -3,9 +3,17 @@ sudo: false
 services:
   # -
 
+language: node_js
+node_js:
+  - stable
+
 env:
   global:
     - NAME=android-colors
+
+cache:
+  directories:
+    - node_modules
 
 before_install:
   - set -e  # stop the execution of a script if a command or pipeline has an error
@@ -21,6 +29,11 @@ after_script:
 
 after_success:
   # -
+
+branches:
+  only:
+    - master
+    - next
 
 notifications:
   email: false
