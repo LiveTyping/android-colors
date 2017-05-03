@@ -34,7 +34,7 @@ class Palette extends Component {
         <h3 className="palette__header">Palette</h3>
 
         {Object.keys(palette).map((alias) => (
-          <PaletteTile key={alias} name={colorNames[alias]} colorCode={palette[alias]} alias={alias} />
+          <PaletteTile key={alias} name={colorNames[alias]} colorCode={palette[alias].color} alpha={palette[alias].alpha} alias={alias} />
         ))}
       </div>
     );

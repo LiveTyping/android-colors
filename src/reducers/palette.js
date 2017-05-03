@@ -1,20 +1,20 @@
 import { SET_PALETTE_COLOR } from '../actions/palette';
 
 const initialState = {
-  DARK_PRIMARY: '#303F9F',
-  PRIMARY: '#3F51B5',
-  ACCENT: '#F44336',
-  PRIMARY_TEXT: '#1F1F1F',
-  SECONDARY_TEXT: '#757575',
-  INVERSED_PRIMARY_TEXT: '#FFFFFF',
-  DISABLED_PRIMARY_TEXT: '#949494',
-  INVERSED_SECONDARY_TEXT: '#FFFFFF',
-  DISABLED_SECONDARY_TEXT: '#B3B3B3',
-  HINT_TEXT: '#9E9E9E',
-  NORMAL_CONTROL: '#757575',
-  ACTIVATED_CONTROL: '#F44336',
-  HIGHLIGHT_CONTROL: '#CCCCCC',
-  BUTTON_NORMAL: '#6D6D6D',
+  DARK_PRIMARY: {color: '#303F9F', alpha: '1'},
+  PRIMARY: {color: '#3F51B5', alpha: '1'},
+  ACCENT: {color: '#F44336', alpha: '1'},
+  PRIMARY_TEXT: {color: '#1F1F1F', alpha: '.87'},
+  SECONDARY_TEXT: {color: '#757575', alpha: '.54'},
+  INVERSED_PRIMARY_TEXT: {color: '#FFFFFF', alpha: '1'},
+  DISABLED_PRIMARY_TEXT: {color: '#949494', alpha: '.38'},
+  INVERSED_SECONDARY_TEXT: {color: '#FFFFFF', alpha: '.7'},
+  DISABLED_SECONDARY_TEXT: {color: '#B3B3B3', alpha: '.38'},
+  HINT_TEXT: {color: '#9E9E9E', alpha: '.38'},
+  NORMAL_CONTROL: {color: '#757575', alpha: '1'},
+  ACTIVATED_CONTROL: {color: '#F44336', alpha: '1'},
+  HIGHLIGHT_CONTROL: {color: '#CCCCCC', alpha: '1'},
+  BUTTON_NORMAL: {color: '#6D6D6D', alpha: '1'},
 };
 
 // eslint-disable-next-line import/prefer-default-export
@@ -23,7 +23,7 @@ export function palette(state = initialState, action) {
   switch (type) {
     case SET_PALETTE_COLOR:
       return payload.name in state ?
-        Object.assign({}, state, { [payload.name]: payload.colorCode.toUpperCase() }) :
+        Object.assign({}, state, { [payload.name]: {color: payload.colorCode.toUpperCase(), alpha: state[payload.name].alpha} }) :
         Object.assign({}, state);
     default:
       return state;

@@ -37,8 +37,8 @@ export default function getMuiTheme(muiTheme, ...more) {
       // titleFontWeight: typography.fontWeightNormal,
       // padding: spacing.desktopGutter,
 
-      color: palette.PRIMARY,
-      textColor: palette.INVERSED_PRIMARY_TEXT,
+      color: palette.PRIMARY.color,
+      textColor: palette.INVERSED_PRIMARY_TEXT.color,
       height: spacing.desktopKeylineIncrement,
       titleFontWeight: typography.fontWeightNormal,
       padding: spacing.desktopGutter,
@@ -65,8 +65,8 @@ export default function getMuiTheme(muiTheme, ...more) {
       // selectedFontSize: 14,
 
       backgroundColor: palette.canvasColor,
-      unselectedColor: palette.SECONDARY_TEXT,
-      selectedColor: palette.PRIMARY,
+      unselectedColor: palette.SECONDARY_TEXT.color,
+      selectedColor: palette.PRIMARY.color,
       height: 56,
       unselectedFontSize: 12,
       selectedFontSize: 14,
@@ -98,8 +98,8 @@ export default function getMuiTheme(muiTheme, ...more) {
       labelColor: palette.textColor,
       labelDisabledColor: palette.disabledColor,
 
-      boxColor: palette.NORMAL_CONTROL,
-      checkedColor: palette.ACTIVATED_CONTROL,
+      boxColor: palette.NORMAL_CONTROL.color,
+      checkedColor: palette.ACTIVATED_CONTROL.color,
     },
     chip: {
       backgroundColor: emphasize(palette.canvasColor, 0.12),
@@ -142,12 +142,12 @@ export default function getMuiTheme(muiTheme, ...more) {
       color: transparent,
       buttonFilterColor: '#999999',
       // NORMAL FLAT BUTTON
-      textColor: palette.PRIMARY_TEXT,
-      disabledTextColor: palette.DISABLED_PRIMARY_TEXT,
+      textColor: palette.PRIMARY_TEXT.color,
+      disabledTextColor: palette.DISABLED_PRIMARY_TEXT.color,
       // COLORED FLAT BUTTON
-      primaryTextColor: palette.ACCENT,
+      primaryTextColor: palette.ACCENT.color,
       // @NOTE this color is being handled in RasiedButtonWrapper
-      disabledPrimaryTextColor: lighten(palette.SECONDARY_TEXT, 0.75),
+      disabledPrimaryTextColor: lighten(palette.SECONDARY_TEXT.color, 0.75),
       // TYPOGRAPHY
       fontSize: typography.fontStyleButtonFontSize,
       fontWeight: typography.fontWeightMedium,
@@ -163,10 +163,10 @@ export default function getMuiTheme(muiTheme, ...more) {
       // disabledColor: emphasize(palette.canvasColor, 0.12),
 
       // NORMAL FLOATING ACTION BUTTON
-      color: palette.ACCENT,
-      iconColor: palette.INVERSED_PRIMARY_TEXT,
-      disabledColor: lighten(palette.BUTTON_NORMAL, 0.75),
-      disabledTextColor: lighten(palette.PRIMARY_TEXT, 0.75),
+      color: palette.ACCENT.color,
+      iconColor: palette.INVERSED_PRIMARY_TEXT.color,
+      disabledColor: lighten(palette.BUTTON_NORMAL.color, 0.75),
+      disabledTextColor: lighten(palette.PRIMARY_TEXT.color, 0.75),
       // TYPOGRAPHY
       buttonSize: 56,
       miniSize: 40,
@@ -235,8 +235,8 @@ export default function getMuiTheme(muiTheme, ...more) {
       labelColor: palette.textColor,
       labelDisabledColor: palette.disabledColor,
 
-      borderColor: palette.NORMAL_CONTROL,
-      checkedColor: palette.ACTIVATED_CONTROL,
+      borderColor: palette.NORMAL_CONTROL.color,
+      checkedColor: palette.ACTIVATED_CONTROL.color,
     },
     raisedButton: {
       // color: palette.alternateTextColor,
@@ -251,16 +251,16 @@ export default function getMuiTheme(muiTheme, ...more) {
       // fontWeight: typography.fontWeightMedium,
 
       // NORMAL RAISED BUTTON
-      color: palette.BUTTON_NORMAL,
-      textColor: palette.PRIMARY_TEXT,
-      disabledColor: palette.BUTTON_NORMAL,
-      disabledTextColor: palette.DISABLED_PRIMARY_TEXT,
+      color: palette.BUTTON_NORMAL.color,
+      textColor: palette.PRIMARY_TEXT.color,
+      disabledColor: palette.BUTTON_NORMAL.color,
+      disabledTextColor: palette.DISABLED_PRIMARY_TEXT.color,
       // COLORED RAISED BUTTON
-      primaryColor: palette.ACCENT,
-      primaryTextColor: palette.INVERSED_PRIMARY_TEXT,
+      primaryColor: palette.ACCENT.color,
+      primaryTextColor: palette.INVERSED_PRIMARY_TEXT.color,
       // @NOTE these colors are being handled in RasiedButtonWrapper
-      disabledPrimaryColor: lighten(palette.BUTTON_NORMAL, 0.75),
-      disabledPrimaryTextColor: lighten(palette.PRIMARY_TEXT, 0.75),
+      disabledPrimaryColor: lighten(palette.BUTTON_NORMAL.color, 0.75),
+      disabledPrimaryTextColor: lighten(palette.PRIMARY_TEXT.color, 0.75),
       // TYPOGRAPHY
       fontSize: typography.fontStyleButtonFontSize,
       fontWeight: typography.fontWeightMedium,
@@ -284,15 +284,15 @@ export default function getMuiTheme(muiTheme, ...more) {
       // selectionColor: palette.primary1Color,
       // rippleColor: palette.primary1Color,
       trackSize: 2,
-      trackColor: palette.NORMAL_CONTROL,
-      trackColorSelected: palette.NORMAL_CONTROL,
+      trackColor: palette.NORMAL_CONTROL.color,
+      trackColorSelected: palette.NORMAL_CONTROL.color,
       handleSize: 12,
       handleSizeDisabled: 8,
       handleSizeActive: 18,
       handleColorZero: palette.primary3Color,
       handleFillColor: palette.alternateTextColor,
-      selectionColor: palette.ACTIVATED_CONTROL,
-      rippleColor: palette.ACTIVATED_CONTROL,
+      selectionColor: palette.ACTIVATED_CONTROL.color,
+      rippleColor: palette.ACTIVATED_CONTROL.color,
     },
     snackbar: {
       textColor: palette.alternateTextColor,
@@ -304,8 +304,8 @@ export default function getMuiTheme(muiTheme, ...more) {
       fontWeight: typography.fontWeightMedium,
     },
     statusBar: {
-      color: palette.DARK_PRIMARY,
-      labelColor: palette.INVERSED_PRIMARY_TEXT,
+      color: palette.DARK_PRIMARY.color,
+      labelColor: palette.INVERSED_PRIMARY_TEXT.color,
     },
     stepper: {
       backgroundColor: 'transparent',
@@ -362,14 +362,14 @@ export default function getMuiTheme(muiTheme, ...more) {
       // backgroundColor: 'transparent',
       // borderColor: palette.borderColor,
 
-      textColor: palette.PRIMARY_TEXT,
-      hintColor: palette.HINT_TEXT,
-      floatingLabelColor: palette.HINT_TEXT,
+      textColor: palette.PRIMARY_TEXT.color,
+      hintColor: palette.HINT_TEXT.color,
+      floatingLabelColor: palette.HINT_TEXT.color,
       disabledTextColor: palette.disabledColor,
       errorColor: red500,
-      focusColor: palette.ACTIVATED_CONTROL,
+      focusColor: palette.ACTIVATED_CONTROL.color,
       backgroundColor: 'transparent',
-      borderColor: palette.NORMAL_CONTROL,
+      borderColor: palette.NORMAL_CONTROL.color,
     },
     timePicker: {
       color: palette.alternateTextColor,
@@ -393,10 +393,10 @@ export default function getMuiTheme(muiTheme, ...more) {
       labelDisabledColor: palette.disabledColor,
       trackRequiredColor: fade(palette.primary1Color, 0.5),
 
-      trackOffColor: palette.NORMAL_CONTROL,
-      trackOnColor: lighten(palette.ACTIVATED_CONTROL, 0.75),
-      thumbOffColor: lighten(palette.NORMAL_CONTROL, 0.75),
-      thumbOnColor: palette.ACTIVATED_CONTROL,
+      trackOffColor: palette.NORMAL_CONTROL.color,
+      trackOnColor: lighten(palette.ACTIVATED_CONTROL.color, 0.75),
+      thumbOffColor: lighten(palette.NORMAL_CONTROL.color, 0.75),
+      thumbOnColor: palette.ACTIVATED_CONTROL.color,
     },
     toolbar: {
       color: fade(palette.textColor, 0.54),
