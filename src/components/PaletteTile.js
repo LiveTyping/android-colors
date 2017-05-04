@@ -5,7 +5,7 @@ import './PaletteTile.css';
 const propTypes = {
   name: PropTypes.string.isRequired,
   colorCode: PropTypes.string.isRequired,
-  alpha: PropTypes.string.isRequired,
+  alpha: PropTypes.number.isRequired,
   alias: PropTypes.string.isRequired,
   setPaletteColor: PropTypes.func.isRequired,
 };
@@ -30,28 +30,28 @@ function getContrastYIQColor(hexcolor) {
   return (yiq >= 128) ? 'black' : 'white';
 }
 
-function prepareColorForStyles(colorCode, alpha) { //FIXME Rename?
+function convertToRGBAColor(colorCode, alpha) {
   const rgb = getRGBColor(colorCode.substring(1));
-  return 'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',' + alpha + ')';
+  return `rgba(${rgb.join(',')}, ${alpha})`;
 }
 
 
 class PaletteTile extends Component {
   componentWillMount() {
     this.state = {
-      color: this.props.colorCode.substring(1),
-      alpha: parseInt(parseFloat(this.props.alpha) * 100, 10) + '%',
+      colorValue: this.props.colorCode.substring(1),
+      alphaValue: parseInt(this.props.alpha * 100, 10),
     };
   }
 
   handleInputBlur() {
-    const { color } = this.state;
+    const { colorValue } = this.state;
     const { colorCode, alias } = this.props;
 
-    const newColorCode = `#${color}`.toUpperCase();
+    const newColorCode = `#${colorValue}`.toUpperCase();
 
     if (newColorCode === colorCode || !isValidColorCode(newColorCode)) {
-      this.setState({ color: colorCode.substring(1) });
+      this.setState({ colorValue: colorCode.substring(1) });
       return;
     }
 
@@ -59,14 +59,15 @@ class PaletteTile extends Component {
   }
 
   handleInputChange({ target }) {
-    this.setState({ color: target.value });
+    this.setState({ colorValue: target.value });
   }
 
   render() {
     const { name, colorCode, alpha } = this.props;
+    const { colorValue, alphaValue } = this.state;
     const styles = {
       tile: {
-        backgroundColor: prepareColorForStyles(colorCode, alpha),
+        backgroundColor: convertToRGBAColor(colorCode, alpha),
       },
     };
     const contrastYIQColor = getContrastYIQColor(colorCode.substring(1));
@@ -79,13 +80,13 @@ class PaletteTile extends Component {
             <input
               className={`tile__color-code-input tile_text-${contrastYIQColor}`}
               type="text"
-              value={this.state.color}
+              value={colorValue}
               onBlur={(evt) => this.handleInputBlur(evt)}
               onChange={(evt) => this.handleInputChange(evt)}
               ref={(input) => { this.inputRef = input; }}
             />
           </div>
-          <div className={`tile__alpha tile_text-${contrastYIQColor}`}>{this.state.alpha}</div>
+          <div className={`tile__alpha tile_text-${contrastYIQColor}`}>{alphaValue}%</div>
           <div className={`tile__name tile_text-${contrastYIQColor}`}>{name}</div>
         </div>
       </div>
