@@ -21,6 +21,7 @@ import RaisedButton from '../mui-components/RaisedButton';
 import getMuiTheme from '../lib/getMuiTheme';
 import createCustomMuiTheme from '../lib/createCustomMuiTheme';
 
+import CardComponents from './CardComponents';
 import './ComponentView.css';
 
 const propTypes = {
@@ -62,6 +63,9 @@ const styles = {
   slidersWrapper: {
     marginTop: '20px',
     width: '45%',
+  },
+  cardsWrapper: {
+    marginTop: '30px',
   },
 };
 
@@ -141,13 +145,9 @@ const ComponentView = (props) => {
             </div>
 
             <div style={styles.appBarWrapper}>
-              <Paper zDepth={3} rounded={false}>
-                <StatusBar />
-                <AppBar
-                  zDepth={0}
-                  title="Settings"
-                />
-              </Paper>
+              <div style={styles.cardsWrapper}>
+                <CardComponents />
+              </div>
             </div>
 
             <div style={styles.bottomNavWrapper}>
