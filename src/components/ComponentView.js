@@ -21,7 +21,7 @@ import RaisedButton from '../mui-components/RaisedButton';
 import getMuiTheme from '../lib/getMuiTheme';
 import createCustomMuiTheme from '../lib/createCustomMuiTheme';
 
-import CardComponents from './CardComponents';
+import CardsView from './CardsView';
 import './ComponentView.css';
 
 const propTypes = {
@@ -146,7 +146,7 @@ const ComponentView = (props) => {
 
             <div style={styles.appBarWrapper}>
               <div style={styles.cardsWrapper}>
-                <CardComponents />
+                <CardsView />
               </div>
             </div>
 
