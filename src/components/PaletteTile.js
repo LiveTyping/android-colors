@@ -16,6 +16,10 @@ function isValidColorCode(colorCode) {
   return /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/i.test(colorCode);
 }
 
+/**
+* @param {string} hexcolor - hex code of color
+* @returns {array} array of three numbers that define the color in rgb model
+*/
 function getRGBColor(hexcolor) {
   const r = parseInt(hexcolor.substr(0, 2), 16);
   const g = parseInt(hexcolor.substr(2, 2), 16);
@@ -30,6 +34,11 @@ function getContrastYIQColor(hexcolor) {
   return (yiq >= 128) ? 'black' : 'white';
 }
 
+/**
+* @param {string} colorCode - hex code of color
+* @param {number} alpha - opacity of color
+* @returns {string} that specifies styles using rgba() css function
+*/
 function convertToRGBAColor(colorCode, alpha) {
   const rgb = getRGBColor(colorCode.substring(1));
   return `rgba(${rgb.join(',')}, ${alpha})`;
