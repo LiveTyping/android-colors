@@ -22,6 +22,7 @@ import getMuiTheme from '../lib/getMuiTheme';
 import createCustomMuiTheme from '../lib/createCustomMuiTheme';
 
 import './ComponentView.css';
+import TextView from './TextView';
 
 const propTypes = {
   palette: PropTypes.object.isRequired,
@@ -62,6 +63,9 @@ const styles = {
   slidersWrapper: {
     marginTop: '20px',
     width: '45%',
+  },
+  textComponentsWrapper: {
+    margin: '15px 0',
   },
 };
 
@@ -176,6 +180,10 @@ const ComponentView = (props) => {
                   />
                 </BottomNavigation>
               </Paper>
+            </div>
+
+            <div style={styles.textComponentsWrapper}>
+              <TextView />
             </div>
 
           </div>
