@@ -1,0 +1,10 @@
+.component-view {
+  flex: 1 100%;
+  padding: 34px;
+}
+
+@media all and (min-width: 1280px) {
+  .component-view {
+    flex: 2 auto;
+  }
+}

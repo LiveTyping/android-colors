@@ -1,0 +1,35 @@
+{
+  "name": "android-colors",
+  "version": "1.0.0",
+  "homepage": "https://livetyping.github.io/android-colors/",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "history": "^4.6.1",
+    "material-ui": "^0.17.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^4.0.0",
+    "react-router-redux": "^5.0.0-alpha.4",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "gh-pages": "^0.12.0",
+    "react-scripts": "0.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "pretest": "eslint ./src --cache",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }
+}
