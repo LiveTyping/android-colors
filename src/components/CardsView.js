@@ -17,6 +17,7 @@ const styles = {
     media: {
       backgroundColor: 'rgb(188, 188, 188)',
       height: '120px',
+      overflow: 'hidden',
     },
     title: {
       fontSize: '14px',
@@ -123,7 +124,9 @@ const CardWithHeader = () => (
   <Card style={styles.cardWithHeader.card}>
     <CardHeader
       title="Title"
-      avatar=""
+      avatar={`
+        https://g-design.storage.googleapis.com/production/v6/
+assets/article/daydream/renditions/1702_daydream_hero-2480@2x.png`}
       style={styles.cardWithHeader.header}
       titleStyle={styles.cardWithHeader.headerTitle}
     />
@@ -148,7 +151,15 @@ const CardWithHeader = () => (
 
 const CardWithMedia = () => (
   <Card style={styles.cardWithMedia.card}>
-    <CardMedia style={styles.cardWithMedia.media} />
+    <CardMedia style={styles.cardWithMedia.media}>
+      <img
+        src={`
+          https://g-design.storage.googleapis.com/production/v6/assets/
+article/daydream/renditions/1702_daydream_hero-2480@2x.png
+          `}
+        alt=""
+      />
+    </CardMedia>
     <CardTitle
       title="Simple card with buttons"
       style={styles.cardWithMedia.titleContainer}
