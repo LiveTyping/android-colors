@@ -6,12 +6,6 @@ const contextTypes = {
   muiTheme: PropTypes.object.isRequired,
 };
 
-const styles = {
-  underlineDisabled: {
-    borderBottom: '1px solid',
-  },
-};
-
 class TextField extends Component {
   getInputStyle() {
     const { context } = this;
@@ -21,12 +15,20 @@ class TextField extends Component {
     return inputStyle;
   }
 
+  getUnderlineDisabledStyle() {
+    const underlineDisabledColor = this.context.muiTheme.textField.disabledUnderlineColor;
+    return {
+      borderBottom: '1px solid',
+      borderBottomColor: underlineDisabledColor,
+    };
+  }
+
   render() {
     return (
       <MuiTextField
         {...this.props}
         inputStyle={this.getInputStyle()}
-        underlineDisabledStyle={styles.underlineDisabled}
+        underlineDisabledStyle={this.getUnderlineDisabledStyle()}
       />
     );
   }

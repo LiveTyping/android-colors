@@ -34,11 +34,13 @@ const TextFieldsView = () => (
     <TextField
       defaultValue="Disable edit text"
       disabled
+      name="disabled textfield"
     />
     <TextField
       defaultValue="password"
       type="password"
       errorText="Username or Password is incorrect"
+      name="password textfield"
     />
   </div>
 );

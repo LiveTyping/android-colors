@@ -381,6 +381,7 @@ export default function getMuiTheme(muiTheme, ...more) {
       focusColor: ACTIVATED_CONTROL.color,
       backgroundColor: 'transparent',
       borderColor: NORMAL_CONTROL.color,
+      disabledUnderlineColor: lighten(NORMAL_CONTROL.color, 0.75),
     },
     timePicker: {
       color: alternateTextColor,
