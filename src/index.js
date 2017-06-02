@@ -1,13 +1,13 @@
 import React from 'react';
-import { render } from 'react-dom';
+import {render} from 'react-dom';
 
-import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
+import {createStore, combineReducers, compose, applyMiddleware} from 'redux';
+import {Provider} from 'react-redux';
 
 import createHashHistory from 'history/createHashHistory';
-import { Route } from 'react-router';
+import {Route} from 'react-router';
 
-import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
+import {ConnectedRouter, routerReducer, routerMiddleware} from 'react-router-redux';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -51,7 +51,7 @@ function mountApplication(mountNode) {
     <Provider store={initStore()}>
       <ConnectedRouter history={history}>
         <div>
-          <Route exact path="/" component={App} />
+          <Route exact path="/" component={App}/>
         </div>
       </ConnectedRouter>
     </Provider>,

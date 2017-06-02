@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, {PropTypes} from 'react';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -6,12 +6,13 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import Toggle from 'material-ui/Toggle';
 import Checkbox from 'material-ui/Checkbox';
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
-import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNavigation';
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
 import FontIcon from 'material-ui/FontIcon';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 import Slider from 'material-ui/Slider';
+import Text from './Text';
 
 import StatusBar from '../mui-components/StatusBar';
 import FlatButton from '../mui-components/FlatButton';
@@ -22,49 +23,11 @@ import createCustomMuiTheme from '../lib/createCustomMuiTheme';
 
 import './ComponentView.css';
 import TextView from './TextView';
+import styles from './Styles'
 
 const propTypes = {
   palette: PropTypes.object.isRequired,
 };
-
-const styles = {
-  toggle: {
-    margin: '12px 0',
-  },
-  radioButton: {
-    margin: '12px 0 12px 8px',
-  },
-  checkbox: {
-    margin: '12px 0',
-  },
-  fabWrapper: {
-    textAlign: 'right',
-  },
-  fab: {
-    margin: 12,
-  },
-  buttonsWrapper: {
-    marginTop: '20px',
-    textAlign: 'center',
-  },
-  button: {
-    margin: '5px 30px',
-  },
-  appBarWrapper: {
-    marginTop: '35px',
-  },
-  bottomNavWrapper: {
-    marginTop: '35px',
-  },
-  slidersWrapper: {
-    marginTop: '20px',
-    width: '45%',
-  },
-  textComponentsWrapper: {
-    margin: '15px 0',
-  },
-};
-
 
 const ComponentView = (props) => {
   const theme = createCustomMuiTheme(props.palette);
@@ -74,55 +37,126 @@ const ComponentView = (props) => {
       <div className="component-view">
         <div className="row">
           <div className="col-sm-6">
-            <div className="row">
 
+            {/*Buttons*/}
+            <div className="row">
+              <div className="col-sm-4">
+                <Text style={styles.titleText}>Buttons</Text>
+                <Text style={styles.subTitleText}>Raised</Text>
+              </div>
+            </div>
+            {/*raised buttons*/}
+            <div style={styles.buttonsWrapper}>
+              <div>
+                <RaisedButton style={styles.button} label="Simple"/>
+                <RaisedButton style={styles.button} label="Colored" primary/>
+              </div>
+              <div>
+                <RaisedButton style={styles.button} label="Disable raised" disabled/>
+                <RaisedButton style={styles.button} label="Disable Colored" primary disabled/>
+              </div>
+            </div>
+            <div className="row" style={styles.fabWrapper}>
+              <FloatingActionButton style={styles.fab}><ContentAdd /></FloatingActionButton>
+            </div>
+
+            {/*flat buttons*/}
+            <div className="row">
+              <div className="col-sm-4">
+                <Text style={styles.subTitleText}>Flat</Text>
+              </div>
+
+            </div>
+            <div style={styles.buttonsWrapper}>
+              <div>
+                <FlatButton style={styles.button} label="Simple"/>
+                <FlatButton style={styles.button} label="Colored" primary/>
+              </div>
+              <div>
+                <FlatButton style={styles.button} label="Disable" disabled/>
+                <FlatButton style={styles.button} label="Disable Colored" primary disabled/>
+              </div>
+            </div>
+
+            {/*Controls*/}
+            <div className="row">
+              <div className="col-sm-4">
+                <Text style={styles.titleText}>Controls</Text>
+              </div>
+            </div>
+
+            <div className="row">
+              {/*switch*/}
               <div className="col-sm-6">
+
                 <div className="row">
+
                   <div className="col-sm-4">
-                    <Toggle style={styles.toggle} />
-                    <Toggle defaultToggled style={styles.toggle} />
+                    <Text style={styles.subTitleText}>Switch</Text>
                   </div>
-                  <div className="col-sm-4">
-                    <RadioButtonGroup name="foobarRadio" defaultSelected="foo">
-                      <RadioButton
-                        value="foo"
-                        style={styles.radioButton}
-                      />
-                      <RadioButton
-                        value="bar"
-                        style={styles.radioButton}
-                      />
-                    </RadioButtonGroup>
-                  </div>
-                  <div className="col-sm-4">
-                    <Checkbox style={styles.checkbox} />
-                    <Checkbox defaultChecked style={styles.checkbox} />
-                  </div>
+
+                </div>
+                <div className="col-sm-4">
+                  <Toggle defaultToggled style={styles.toggle}/>
+                  <Toggle style={styles.toggle}/>
+                </div>
+                <div className="col-sm-4">
+                  <Toggle defaultToggled style={styles.toggle} disabled/>
+                  <Toggle style={styles.toggle} disabled/>
                 </div>
               </div>
 
-              <div className="col-sm-6" style={styles.fabWrapper}>
-                <FloatingActionButton style={styles.fab}><ContentAdd /></FloatingActionButton>
+              {/*checkbox*/}
+              <div className="col-sm-6">
+                <div className="row">
+                  <div className="col-sm-4">
+                    <Text style={styles.subTitleText}>CheckBox</Text>
+                  </div>
+                </div>
+                <div className="col-sm-4">
+                  <Checkbox style={styles.checkbox}/>
+                  <Checkbox defaultChecked style={styles.checkbox}/>
+                </div>
+                <div className="col-sm-4">
+                  <Checkbox style={styles.checkbox} disabled/>
+                  <Checkbox defaultChecked style={styles.checkbox} disabled/>
+                </div>
               </div>
             </div>
 
-            <div style={styles.slidersWrapper}>
-              <Slider defaultValue={0.33} />
-              <Slider defaultValue={0.66} disabled />
-            </div>
+            <div className="row">
+              {/*radiobutton*/}
+              <div className="col-sm-6">
+                <div className="row">
+                  <div className="col-sm-4">
+                    <Text style={styles.subTitleText}>RadioButton</Text>
+                  </div>
+                </div>
+                <div className="col-sm-4">
+                  <RadioButtonGroup name="foobarRadio" defaultSelected="foo">
+                    <RadioButton value="foo" style={styles.radioButton}/>
+                    <RadioButton value="bar" style={styles.radioButton}/>
+                  </RadioButtonGroup>
+                </div>
+                <div className="col-sm-4">
+                  <RadioButtonGroup name="foobarRadio" defaultSelected="foo">
+                    <RadioButton value="foo" style={styles.radioButton} disabled/>
+                    <RadioButton value="bar" style={styles.radioButton} disabled/>
+                  </RadioButtonGroup>
+                </div>
+              </div>
 
-            <div style={styles.buttonsWrapper}>
-              <div>
-                <FlatButton style={styles.button} label="Normal" />
-                <FlatButton style={styles.button} label="Disabled" disabled />
-              </div>
-              <div>
-                <FlatButton style={styles.button} label="Normal" primary />
-                <FlatButton style={styles.button} label="Disabled" primary disabled />
-              </div>
-              <div>
-                <RaisedButton style={styles.button} label="Normal" primary />
-                <RaisedButton style={styles.button} label="Disabled" primary disabled />
+              {/*Seekbar*/}
+              <div className="col-sm-6">
+                <div className="row">
+                  <div className="col-sm-4">
+                    <Text style={styles.subTitleText}>SeekBar</Text>
+                  </div>
+                </div>
+                <div style={styles.slidersWrapper}>
+                  <Slider defaultValue={0.33}/>
+                  <Slider defaultValue={0.66} disabled/>
+                </div>
               </div>
             </div>
           </div>
@@ -146,21 +180,24 @@ const ComponentView = (props) => {
                     icon={(
                       <FontIcon className="material-icons">assistant</FontIcon>
                     )}
-                    onTouchTap={() => {}}
+                    onTouchTap={() => {
+                    }}
                   />
                   <BottomNavigationItem
                     label="Photos"
                     icon={(
                       <FontIcon className="material-icons">photo</FontIcon>
                     )}
-                    onTouchTap={() => {}}
+                    onTouchTap={() => {
+                    }}
                   />
                   <BottomNavigationItem
                     label="Albums"
                     icon={(
                       <FontIcon className="material-icons">collections_bookmark</FontIcon>
                     )}
-                    onTouchTap={() => {}}
+                    onTouchTap={() => {
+                    }}
                   />
                 </BottomNavigation>
               </Paper>

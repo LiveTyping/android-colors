@@ -3,16 +3,7 @@ import React from 'react';
 import TextField from '../mui-components/TextField';
 import Text from './Text';
 import LinkText from './LinkText';
-
-const styles = {
-  textComponentsContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  text: {
-    margin: '8px 0',
-  },
-};
+import styles from './Styles'
 
 const SimpleTextsView = () => (
   <div style={styles.textComponentsContainer}>
