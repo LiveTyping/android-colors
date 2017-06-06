@@ -11,7 +11,7 @@ const contextTypes = {
 class CircularProgressBar extends Component {
   render() {
     const props = Object.assign({}, this.props, {
-      color: this.context.muiTheme.progressbar.primary1Color
+      color: this.context.muiTheme.progressbar.progressColor
     });
     return <CircularProgress {...props} />;
   }

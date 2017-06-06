@@ -39,7 +39,7 @@ export default function getMuiTheme(muiTheme, ...more) {
 
   muiTheme = merge({
     appBar: {
-      // color: primary1Color,
+      // color: progressColor,
       // textColor: alternateTextColor,
       // height: spacing.desktopKeylineIncrement,
       // titleFontWeight: typography.fontWeightNormal,
@@ -67,7 +67,7 @@ export default function getMuiTheme(muiTheme, ...more) {
     bottomNavigation: {
       // backgroundColor: canvasColor,
       // unselectedColor: fade(textColor, 0.54),
-      // selectedColor: primary1Color,
+      // selectedColor: progressColor,
       // height: 56,
       // unselectedFontSize: 12,
       // selectedFontSize: 14,
@@ -100,7 +100,7 @@ export default function getMuiTheme(muiTheme, ...more) {
     },
     checkbox: {
       // boxColor: textColor,
-      // checkedColor: primary1Color,
+      // checkedColor: progressColor,
       requiredColor: primary1Color,
       disabledColor,
       labelColor: textColor,
@@ -110,12 +110,9 @@ export default function getMuiTheme(muiTheme, ...more) {
       checkedColor: ACTIVATED_CONTROL.color,
     },
     progressbar: {
-      // requiredColor: primary1Color,
-      // disabledColor,
-      // labelColor: textColor,
-      // labelDisabledColor: disabledColor,
+      //TODO: fork from library to do this more android
       primary3Color: NORMAL_CONTROL.color,
-      primary1Color: ACTIVATED_CONTROL.color,
+      progressColor: ACTIVATED_CONTROL.color,
 
     },
     chip: {
@@ -151,7 +148,7 @@ export default function getMuiTheme(muiTheme, ...more) {
       // buttonFilterColor: '#999999',
       // disabledTextColor: fade(textColor, 0.3),
       // textColor: textColor,
-      // primaryTextColor: primary1Color,
+      // primaryTextColor: progressColor,
       // secondaryTextColor: accent1Color,
       // fontSize: typography.fontStyleButtonFontSize,
       // fontWeight: typography.fontWeightMedium,
@@ -172,7 +169,7 @@ export default function getMuiTheme(muiTheme, ...more) {
     floatingActionButton: {
       // buttonSize: 56,
       // miniSize: 40,
-      // color: primary1Color,
+      // color: progressColor,
       // iconColor: alternateTextColor,
       // secondaryColor: accent1Color,
       // secondaryIconColor: alternateTextColor,
@@ -248,7 +245,7 @@ export default function getMuiTheme(muiTheme, ...more) {
     radioButton: {
       // borderColor: textColor,
       // backgroundColor: alternateTextColor, // not used
-      // checkedColor: primary1Color,
+      // checkedColor: progressColor,
       requiredColor: primary1Color,
       disabledColor,
       size: 24,
@@ -261,7 +258,7 @@ export default function getMuiTheme(muiTheme, ...more) {
     raisedButton: {
       // color: alternateTextColor,
       // textColor: textColor,
-      // primaryColor: primary1Color,
+      // primaryColor: progressColor,
       // primaryTextColor: alternateTextColor,
       // secondaryColor: accent1Color,
       // secondaryTextColor: alternateTextColor,
@@ -301,8 +298,8 @@ export default function getMuiTheme(muiTheme, ...more) {
       // handleSizeActive: 18,
       // handleColorZero: primary3Color,
       // handleFillColor: alternateTextColor,
-      // selectionColor: primary1Color,
-      // rippleColor: primary1Color,
+      // selectionColor: progressColor,
+      // rippleColor: progressColor,
       trackSize: 2,
       trackColor: NORMAL_CONTROL.color,
       trackColorSelected: NORMAL_CONTROL.color,
@@ -378,7 +375,7 @@ export default function getMuiTheme(muiTheme, ...more) {
       // floatingLabelColor: disabledColor,
       // disabledTextColor: disabledColor,
       // errorColor: red500,
-      // focusColor: primary1Color,
+      // focusColor: progressColor,
       // backgroundColor: 'transparent',
       // borderColor: borderColor,
 
@@ -403,11 +400,11 @@ export default function getMuiTheme(muiTheme, ...more) {
       selectTextColor: alternateTextColor,
     },
     toggle: {
-      // thumbOnColor: primary1Color,
+      // thumbOnColor: progressColor,
       // thumbOffColor: accent2Color,
       thumbDisabledColor: borderColor,
       thumbRequiredColor: primary1Color,
-      // trackOnColor: fade(primary1Color, 0.5),
+      // trackOnColor: fade(progressColor, 0.5),
       // trackOffColor: primary3Color,
       trackDisabledColor: primary3Color,
       labelColor: textColor,
