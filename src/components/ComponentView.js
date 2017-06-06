@@ -13,6 +13,8 @@ import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 import Slider from 'material-ui/Slider';
 import Text from './Text';
+import CircularProgressBar from '../mui-components/CircularProgress';
+import LinearProgressBar from '../mui-components/LinearProgress';
 
 import StatusBar from '../mui-components/StatusBar';
 import FlatButton from '../mui-components/FlatButton';
@@ -20,6 +22,7 @@ import RaisedButton from '../mui-components/RaisedButton';
 
 import getMuiTheme from '../lib/getMuiTheme';
 import createCustomMuiTheme from '../lib/createCustomMuiTheme';
+import Divider  from 'material-ui/Divider';
 
 import './ComponentView.css';
 import TextView from './TextView';
@@ -67,7 +70,7 @@ const ComponentView = (props) => {
               </div>
 
             </div>
-            <div style={styles.buttonsWrapper}>
+            <div style={styles.flatButtonsWrapper}>
               <div>
                 <FlatButton style={styles.button} label="Simple"/>
                 <FlatButton style={styles.button} label="Colored" primary/>
@@ -77,7 +80,7 @@ const ComponentView = (props) => {
                 <FlatButton style={styles.button} label="Disable Colored" primary disabled/>
               </div>
             </div>
-
+            <Divider/>
             {/*Controls*/}
             <div className="row">
               <div className="col-sm-4">
@@ -154,12 +157,91 @@ const ComponentView = (props) => {
                   </div>
                 </div>
                 <div style={styles.slidersWrapper}>
-                  <Slider defaultValue={0.33}/>
-                  <Slider defaultValue={0.66} disabled/>
+                  <Slider style={styles.slider} defaultValue={0.33}/>
+                  <Slider style={styles.slider} defaultValue={0.66} disabled/>
                 </div>
               </div>
             </div>
+
+            {/*ToggleButton*/}
+            <div className="row">
+              <div className="col-sm-4">
+                <Text style={styles.subTitleText}>Toggle button</Text>
+              </div>
+            </div>
+
+            {/*RatingBar*/}
+            <div className="row">
+              <div className="col-sm-4">
+                <Text style={styles.subTitleText}>RatingBar</Text>
+              </div>
+
+            </div>
+            <div className="row">
+              <Divider/>
+              {/*ProgresBar*/}
+              <div className="col-sm-4">
+                <Text style={styles.titleText}>ProgressBar</Text>
+              </div>
+            </div>
+
+
+            <div className="row">
+              {/*Indeterminate*/}
+              <div className="col-sm-6">
+
+                <div className="row">
+
+                  <div className="col-sm-4">
+                    <Text style={styles.subTitleText}>Indeterminate</Text>
+                  </div>
+
+                </div>
+                <LinearProgressBar mode='indeterminate'/>
+              </div>
+              {/*Determinate*/}
+              <div className="col-sm-6">
+                <div className="row">
+
+                  <div className="col-sm-4">
+                    <Text style={styles.subTitleText}>Determinate</Text>
+                  </div>
+
+                </div>
+                <LinearProgressBar mode='determinate'
+
+                                   value="50"/>
+              </div>
+            </div>
+
+            <div className="row">
+              {/*Buffered*/}
+              <div className="col-sm-6">
+
+                <div className="row">
+
+                  <div className="col-sm-4">
+                    <Text style={styles.subTitleText}>Buffered</Text>
+                  </div>
+
+                </div>
+                <LinearProgressBar mode='determinate' value="50"/>
+              </div>
+              {/*Circular*/}
+              <div className="col-sm-6">
+                <div className="row">
+
+                  <div className="col-sm-4">
+                    <Text style={styles.subTitleText}>Circular</Text>
+                  </div>
+                </div>
+                <CircularProgressBar mode='indeterminate'/>
+              </div>
+            </div>
+
+
           </div>
+
 
           <div className="col-sm-6">
             <div style={styles.appBarWrapper}>

@@ -18,6 +18,10 @@ const styles = {
   buttonsWrapper: {
     marginTop: '20px',
   },
+  flatButtonsWrapper: {
+    marginTop: '20px',
+    marginBottom: '20px',
+  },
   button: {
     margin: '5px 5px',
     width: '45%',
@@ -29,8 +33,9 @@ const styles = {
     marginTop: '35px',
   },
   slidersWrapper: {
-    // marginTop: '20px',
-    // width: '45%',
+  },
+  slider:{
+    margin: 0,
   },
   textComponentsWrapper: {
     margin: '15px 0',

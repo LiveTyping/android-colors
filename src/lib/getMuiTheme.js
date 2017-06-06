@@ -109,6 +109,15 @@ export default function getMuiTheme(muiTheme, ...more) {
       boxColor: NORMAL_CONTROL.color,
       checkedColor: ACTIVATED_CONTROL.color,
     },
+    progressbar: {
+      // requiredColor: primary1Color,
+      // disabledColor,
+      // labelColor: textColor,
+      // labelDisabledColor: disabledColor,
+      primary3Color: NORMAL_CONTROL.color,
+      primary1Color: ACTIVATED_CONTROL.color,
+
+    },
     chip: {
       backgroundColor: emphasize(canvasColor, 0.12),
       deleteIconColor: fade(textColor, 0.26),
