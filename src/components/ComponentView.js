@@ -12,6 +12,8 @@ import FontIcon from 'material-ui/FontIcon';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 import Slider from 'material-ui/Slider';
+import TimePicker from 'material-ui/TimePicker';
+import DatePicker from 'material-ui/DatePicker';
 import Text from './Text';
 import CircularProgressBar from '../mui-components/CircularProgress';
 import LinearProgressBar from '../mui-components/LinearProgress';
@@ -70,7 +72,7 @@ const ComponentView = (props) => {
               </div>
 
             </div>
-            <div style={styles.flatButtonsWrapper}>
+            <div style={styles.buttonsWrapper}>
               <div>
                 <FlatButton style={styles.button} label="Simple"/>
                 <FlatButton style={styles.button} label="Colored" primary/>
@@ -80,7 +82,7 @@ const ComponentView = (props) => {
                 <FlatButton style={styles.button} label="Disable Colored" primary disabled/>
               </div>
             </div>
-            <Divider/>
+            <Divider style={styles.dividerWrapper}/>
             {/*Controls*/}
             <div className="row">
               <div className="col-sm-4">
@@ -178,7 +180,7 @@ const ComponentView = (props) => {
 
             </div>
             <div className="row">
-              <Divider/>
+              <Divider style={styles.dividerWrapper}/>
               {/*ProgresBar*/}
               <div className="col-sm-4">
                 <Text style={styles.titleText}>ProgressBar</Text>
@@ -197,7 +199,7 @@ const ComponentView = (props) => {
                   </div>
 
                 </div>
-                <LinearProgressBar mode='indeterminate'/>
+                <LinearProgressBar mode='indeterminate' style={styles.progressStyle}/>
               </div>
               {/*Determinate*/}
               <div className="col-sm-6">
@@ -208,9 +210,7 @@ const ComponentView = (props) => {
                   </div>
 
                 </div>
-                <LinearProgressBar mode='determinate'
-
-                                   value="50"/>
+                <LinearProgressBar style={styles.progressStyle} mode='determinate' value="50"/>
               </div>
             </div>
 
@@ -225,7 +225,7 @@ const ComponentView = (props) => {
                   </div>
 
                 </div>
-                <LinearProgressBar mode='determinate' value="50"/>
+                <LinearProgressBar mode='determinate' value="50" style={styles.progressStyle}/>
               </div>
               {/*Circular*/}
               <div className="col-sm-6">
@@ -235,14 +235,29 @@ const ComponentView = (props) => {
                     <Text style={styles.subTitleText}>Circular</Text>
                   </div>
                 </div>
-                <CircularProgressBar mode='indeterminate'/>
+                <CircularProgressBar mode='indeterminate' thickness='2'/>
               </div>
             </div>
 
 
+            <Divider style={styles.dividerWrapper}/>
+            {/*Pickers*/}
+            <div>
+              <div>
+                <Text style={styles.titleText}>Pickers</Text>
+                <Text style={styles.subTitleText}>Time picker</Text>
+              </div>
+            </div>
+            <TimePicker format='24hr'/>
+            <div>
+                <Text style={styles.subTitleText}>Date picker</Text>
+            </div>
+            <DatePicker/>
+
+
           </div>
 
-
+          {/*2 column*/}
           <div className="col-sm-6">
             <div style={styles.appBarWrapper}>
               <Paper zDepth={3} rounded={false}>

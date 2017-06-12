@@ -18,9 +18,8 @@ const styles = {
   buttonsWrapper: {
     marginTop: '20px',
   },
-  flatButtonsWrapper: {
+  dividerWrapper: {
     marginTop: '20px',
-    marginBottom: '20px',
   },
   button: {
     margin: '5px 5px',
@@ -32,10 +31,9 @@ const styles = {
   bottomNavWrapper: {
     marginTop: '35px',
   },
-  slidersWrapper: {
-  },
-  slider:{
-    margin: 0,
+  slidersWrapper: {},
+  progressStyle: {
+    height: '2px',
   },
   textComponentsWrapper: {
     margin: '15px 0',

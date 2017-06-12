@@ -109,12 +109,6 @@ export default function getMuiTheme(muiTheme, ...more) {
       boxColor: NORMAL_CONTROL.color,
       checkedColor: ACTIVATED_CONTROL.color,
     },
-    progressbar: {
-      //TODO: fork from library to do this more android
-      primary3Color: NORMAL_CONTROL.color,
-      progressColor: ACTIVATED_CONTROL.color,
-
-    },
     chip: {
       backgroundColor: emphasize(canvasColor, 0.12),
       deleteIconColor: fade(textColor, 0.26),
@@ -125,11 +119,15 @@ export default function getMuiTheme(muiTheme, ...more) {
         0 1px 4px ${fade(shadowColor, 0.12)}`,
     },
     datePicker: {
-      color: primary1Color,
-      textColor: alternateTextColor,
+      textColor: INVERSED_PRIMARY_TEXT.color,
+      accentColor: ACCENT.color,
+      clockColor: textColor,
+      clockCircleColor,
+      headerColor: ACCENT.color,
+      selectColor: ACTIVATED_CONTROL.color,
+      selectTextColor: INVERSED_PRIMARY_TEXT.color,
+      color: PRIMARY.color,
       calendarTextColor: textColor,
-      selectColor: primary2Color,
-      selectTextColor: alternateTextColor,
       calendarYearBackgroundColor: canvasColor,
     },
     dialog: {
@@ -242,6 +240,13 @@ export default function getMuiTheme(muiTheme, ...more) {
          0 ${d[3]}px ${d[4]}px ${fade(shadowColor, d[5])}`
       )),
     },
+    progressbar: {
+      //TODO: fork from library to do this more android
+      primary3Color: NORMAL_CONTROL.color,
+      progressColor: ACTIVATED_CONTROL.color,
+      height: '10px',
+
+    },
     radioButton: {
       // borderColor: textColor,
       // backgroundColor: alternateTextColor, // not used
@@ -304,6 +309,7 @@ export default function getMuiTheme(muiTheme, ...more) {
       trackColor: NORMAL_CONTROL.color,
       trackColorSelected: NORMAL_CONTROL.color,
       handleSize: 12,
+      margin: 10,
       handleSizeDisabled: 8,
       handleSizeActive: 18,
       handleColorZero: primary3Color,
@@ -390,14 +396,14 @@ export default function getMuiTheme(muiTheme, ...more) {
       disabledUnderlineColor: lighten(NORMAL_CONTROL.color, 0.75),
     },
     timePicker: {
-      color: alternateTextColor,
-      textColor: alternateTextColor,
-      accentColor: primary1Color,
+      textColor: INVERSED_PRIMARY_TEXT.color,
+      accentColor: ACTIVATED_CONTROL.color,
       clockColor: textColor,
       clockCircleColor,
-      headerColor: pickerHeaderColor || primary1Color,
-      selectColor: primary2Color,
-      selectTextColor: alternateTextColor,
+      headerColor: ACCENT.color,
+      selectColor: ACTIVATED_CONTROL.color,
+      selectTextColor: INVERSED_PRIMARY_TEXT.color,
+
     },
     toggle: {
       // thumbOnColor: progressColor,

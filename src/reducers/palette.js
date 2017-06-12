@@ -12,7 +12,7 @@ const initialState = {
   DISABLED_SECONDARY_TEXT: { color: '#B3B3B3', alpha: 0.38 },
   HINT_TEXT: { color: '#9E9E9E', alpha: 0.38 },
   NORMAL_CONTROL: { color: '#757575', alpha: 1 },
-  ACTIVATED_CONTROL: { color: '#F44336', alpha: 1 },
+  ACTIVATED_CONTROL: { color: '#00FF00', alpha: 1 },
   HIGHLIGHT_CONTROL: { color: '#CCCCCC', alpha: 1 },
   BUTTON_NORMAL: { color: '#6D6D6D', alpha: 1 },
 };
