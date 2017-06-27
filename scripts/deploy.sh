@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+# set -e
 
 # Deploy built docs from this branch
 : ${DEPLOY_BRANCH:=master}
