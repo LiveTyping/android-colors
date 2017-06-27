@@ -29,7 +29,7 @@ script:
   - npm install --silent --progress=false
   - npm run pretest
   # - npm run test
-  - source scripts/deploy.sh
+  - source .travis/deploy.sh
 
 after_script:
   # -
