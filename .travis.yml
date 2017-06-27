@@ -27,7 +27,7 @@ before_install:
 
 script:
   - npm install --silent --progress=false
-  - ./node_modules/.bin/eslint ./src --cache
+  - npm run pretest
   # - npm run test
   - source scripts/deploy.sh
 
