@@ -26,7 +26,6 @@ before_install:
   # - set -x  # all executed commands are printed to the terminal (serves for debugging :muscle:)
 
 script:
-  - set -e
   - npm install --silent --progress=false
   - ./node_modules/.bin/eslint ./src --cache
   # - npm run test
