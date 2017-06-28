@@ -21,7 +21,7 @@ cache:
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_293649c28335_key -iv $encrypted_293649c28335_iv
-    -in deployment.enc -out deployment -d
+    -in .travis/deployment.enc -out .travis/deployment -d
   # - set -e  # stop the execution of a script if a command or pipeline has an error
   # - set -x  # all executed commands are printed to the terminal (serves for debugging :muscle:)
 
