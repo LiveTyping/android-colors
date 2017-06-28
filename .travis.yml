@@ -11,7 +11,7 @@ env:
   global:
     - NAME="android-colors"
     - DEPLOY_BRANCH="master"
-    - SSH_KEY="deployment"
+    - SSH_KEY=".travis/deployment"
     - GIT_NAME="travis"
     - GIT_EMAIL="deploy@travis-ci.org"
 
