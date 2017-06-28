@@ -7,7 +7,6 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import Toggle from 'material-ui/Toggle';
 import Checkbox from 'material-ui/Checkbox';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
-import TextField from 'material-ui/TextField';
 import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNavigation';
 import FontIcon from 'material-ui/FontIcon';
 import Paper from 'material-ui/Paper';
@@ -22,6 +21,7 @@ import getMuiTheme from '../lib/getMuiTheme';
 import createCustomMuiTheme from '../lib/createCustomMuiTheme';
 
 import './ComponentView.css';
+import TextView from './TextView';
 
 const propTypes = {
   palette: PropTypes.object.isRequired,
@@ -50,9 +50,6 @@ const styles = {
   button: {
     margin: '5px 30px',
   },
-  textField: {
-    width: '92%',
-  },
   appBarWrapper: {
     marginTop: '35px',
   },
@@ -62,6 +59,9 @@ const styles = {
   slidersWrapper: {
     marginTop: '20px',
     width: '45%',
+  },
+  textComponentsWrapper: {
+    margin: '15px 0',
   },
 };
 
@@ -128,18 +128,6 @@ const ComponentView = (props) => {
           </div>
 
           <div className="col-sm-6">
-            <div>
-              <TextField
-                hintText="Hint text"
-                style={styles.textField}
-              />
-              <TextField
-                defaultValue="Input text for a single line text field"
-                floatingLabelText="Single-line input label"
-                style={styles.textField}
-              />
-            </div>
-
             <div style={styles.appBarWrapper}>
               <Paper zDepth={3} rounded={false}>
                 <StatusBar />
@@ -176,6 +164,10 @@ const ComponentView = (props) => {
                   />
                 </BottomNavigation>
               </Paper>
+            </div>
+
+            <div style={styles.textComponentsWrapper}>
+              <TextView />
             </div>
 
           </div>
