@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import 'normalize.css/normalize.css';
 
 import AppBar from './AppBar';
 import ComponentView from './ComponentView';

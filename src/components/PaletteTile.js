@@ -17,9 +17,9 @@ function isValidColorCode(colorCode) {
 }
 
 /**
-* @param {string} hexcolor - hex code of color
-* @returns {array} array of three numbers that define the color in rgb model
-*/
+ * @param {string} hexcolor - hex code of color
+ * @returns {array} array of three numbers that define the color in rgb model
+ */
 function getRGBColor(hexcolor) {
   const r = parseInt(hexcolor.substr(0, 2), 16);
   const g = parseInt(hexcolor.substr(2, 2), 16);
@@ -28,17 +28,16 @@ function getRGBColor(hexcolor) {
 }
 
 // COPYRIGHT Brian Suda © 2010
-function getContrastYIQColor(hexcolor) {
+function getContrastYIQ(hexcolor) {
   const rgb = getRGBColor(hexcolor);
-  const yiq = ((rgb[0] * 299) + (rgb[1] * 587) + (rgb[2] * 114)) / 1000;
-  return (yiq >= 128) ? 'black' : 'white';
+  return ((rgb[0] * 299) + (rgb[1] * 587) + (rgb[2] * 114)) / 1000;
 }
 
 /**
-* @param {string} colorCode - hex code of color
-* @param {number} alpha - opacity of color
-* @returns {string} that specifies styles using rgba() css function
-*/
+ * @param {string} colorCode - hex code of color
+ * @param {number} alpha - opacity of color
+ * @returns {string} that specifies styles using rgba() css function
+ */
 function convertToRGBAColor(colorCode, alpha) {
   const rgb = getRGBColor(colorCode.substring(1));
   return `rgba(${rgb.join(',')}, ${alpha})`;
@@ -74,32 +73,44 @@ class PaletteTile extends Component {
   render() {
     const { name, colorCode, alpha } = this.props;
     const { colorValue, alphaValue } = this.state;
+
+    const colorContrastYIQ = getContrastYIQ(colorCode.substring(1));
+    const cellTextColorName = colorContrastYIQ >= 128 ? 'black' : 'white';
+    const cellClassName = `palette__table__td palette__table__td_text-${cellTextColorName}`;
     const styles = {
-      tile: {
+      cell: {
         backgroundColor: convertToRGBAColor(colorCode, alpha),
+        borderColor: colorContrastYIQ < 245 && alphaValue > 5 ? 'transparent' : null,
       },
     };
-    const contrastYIQColor = getContrastYIQColor(colorCode.substring(1));
 
     return (
-      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-      <div className="tile" style={styles.tile} onClick={() => this.inputRef.focus()}>
-        <div className="tile__inner">
-          <div className="tile__color-code">
-            <input
-              className={`tile__color-code-input tile_text-${contrastYIQColor}`}
-              type="text"
-              value={colorValue}
-              onBlur={(evt) => this.handleInputBlur(evt)}
-              onChange={(evt) => this.handleInputChange(evt)}
-              ref={(input) => { this.inputRef = input; }}
-            />
-          </div>
-          <div className={`tile__alpha tile_text-${contrastYIQColor}`}>{alphaValue}%</div>
-          <div className={`tile__name tile_text-${contrastYIQColor}`}>{name}</div>
-        </div>
-      </div>
+      <tr className="palette__table__tr">
+        <td className={cellClassName} style={styles.cell}>{name}</td>
+        <td className={cellClassName} style={styles.cell}>#{colorValue}</td>
+        <td className={cellClassName} style={styles.cell}>{alphaValue}%</td>
+      </tr>
     );
+
+    // return (
+    //   // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    //   <div className="tile" style={styles.tile} onClick={() => this.inputRef.focus()}>
+    //     <div className="tile__inner">
+    //       <div className="tile__color-code">
+    //         <input
+    //           className={`tile__color-code-input tile_text-${contrastYIQColor}`}
+    //           type="text"
+    //           value={colorValue}
+    //           onBlur={(evt) => this.handleInputBlur(evt)}
+    //           onChange={(evt) => this.handleInputChange(evt)}
+    //           ref={(input) => { this.inputRef = input; }}
+    //         />
+    //       </div>
+    //       <div className={`tile__alpha tile_text-${contrastYIQColor}`}>{alphaValue}%</div>
+    //       <div className={`tile__name tile_text-${contrastYIQColor}`}>{name}</div>
+    //     </div>
+    //   </div>
+    // );
   }
 }
 

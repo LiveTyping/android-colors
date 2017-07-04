@@ -2,3 +2,21 @@
   display: flex;
   flex-flow: row wrap;
 }
+
+.header {
+  font-size: 24px;
+  font-weight: normal;
+  color: #f72e1a;
+}
+
+.subheader {
+  font-size: 14px;
+  font-weight: 500;
+  color: #545454;
+  margin: 14px 0 7px;
+}
+
+.table {
+  text-align: left;
+  border-spacing: 0;
+}

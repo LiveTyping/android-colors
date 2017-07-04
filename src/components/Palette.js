@@ -27,17 +27,28 @@ const propTypes = {
 
 const Palette = ({ palette }) => (
   <div className="palette">
-    <h3 className="palette__header">Palette</h3>
+    <h1 className="header palette__header">Palette</h1>
 
-    {Object.keys(palette).map((alias) => (
-      <PaletteTile
-        key={alias}
-        name={colorNames[alias]}
-        colorCode={palette[alias].color}
-        alpha={palette[alias].alpha}
-        alias={alias}
-      />
-    ))}
+    <table className="table palette__table palette__table_with-head" style={{ margin: '0 0 25px 0' }}>
+      <thead>
+        <tr className="palette__table__tr">
+          <th className="palette__table__th">Name</th>
+          <th className="palette__table__th">Color</th>
+          <th className="palette__table__th">Opacity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {Object.keys(palette).map((alias) => (
+          <PaletteTile
+            key={alias}
+            name={colorNames[alias]}
+            colorCode={palette[alias].color}
+            alpha={palette[alias].alpha}
+            alias={alias}
+          />
+        ))}
+      </tbody>
+    </table>
   </div>
 );
 
