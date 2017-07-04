@@ -1,0 +1,29 @@
+.component-view {
+  flex: 1 100%;
+  padding: 34px;
+  background-color: #F8F8F8;
+}
+
+@media all and (min-width: 1280px) {
+  .component-view {
+    flex: 2 67%;
+  }
+}
+
+.section__heading {
+  font-size: 24px;
+  color: #f72e1a;
+}
+
+.component-view__section {
+  margin-bottom: 25px;
+  padding-top: 25px;
+  border-top: 1px solid #dbdbdb;
+}
+.component-view__section:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+.component-view__section:last-child {
+  margin-bottom: 0;
+}
