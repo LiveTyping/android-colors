@@ -38,6 +38,7 @@ const styles = {
     width: '100%',
   },
   fabWrapper: {
+    marginTop: '4px',
     textAlign: 'right',
   },
   toggle: {
