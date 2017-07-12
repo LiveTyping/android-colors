@@ -67,9 +67,9 @@ class ComponentView extends Component {
   static renderButtons() {
     return (
       <div className="component-view__section">
-        <h1 className="header">Buttons</h1>
+        <h1 className="title">Buttons</h1>
 
-        <h2 className="subheader">Raised</h2>
+        <h2 className="subtitle">Raised</h2>
         <div className="row">
           <div className="col-sm-6">
             <RaisedButton style={styles.button} label="Normal" />
@@ -86,7 +86,7 @@ class ComponentView extends Component {
           </div>
         </div>
 
-        <h2 className="subheader">Flat</h2>
+        <h2 className="subtitle">Flat</h2>
         <div className="row">
           <div className="col-sm-6">
             <FlatButton style={styles.button} label="Normal" />
@@ -104,11 +104,11 @@ class ComponentView extends Component {
   static renderControls() {
     return (
       <div className="component-view__section" style={styles.controlsWrapper}>
-        <h1 className="header">Controls</h1>
+        <h1 className="title">Controls</h1>
 
         <div className="row">
           <div className="col-sm-6">
-            <h2 className="subheader">Switch</h2>
+            <h2 className="subtitle">Switch</h2>
             <div className="row">
               <div className="col-sm-4"><Toggle defaultToggled style={styles.toggle} /></div>
               <div className="col-sm-4"><Toggle defaultToggled disabled style={styles.toggle} /></div>
@@ -120,7 +120,7 @@ class ComponentView extends Component {
           </div>
 
           <div className="col-sm-6">
-            <h2 className="subheader">Checkbox</h2>
+            <h2 className="subtitle">Checkbox</h2>
             <div className="row">
               <div className="col-sm-2"><Checkbox defaultChecked style={styles.checkbox} /></div>
               <div className="col-sm-2"><Checkbox defaultChecked disabled style={styles.checkbox} /></div>
@@ -132,7 +132,7 @@ class ComponentView extends Component {
           </div>
 
           <div className="col-sm-6">
-            <h2 className="subheader">RadioButton</h2>
+            <h2 className="subtitle">RadioButton</h2>
             <div className="row">
               <div className="col-sm-2">
                 <RadioButtonGroup name="foobarRadio" defaultSelected="foo">
@@ -150,7 +150,7 @@ class ComponentView extends Component {
           </div>
 
           <div className="col-sm-6">
-            <h2 className="subheader">Seekbar</h2>
+            <h2 className="subtitle">Seekbar</h2>
             <Slider defaultValue={0.66} sliderStyle={styles.slider} />
             <Slider defaultValue={0.33} disabled sliderStyle={styles.slider} />
           </div>
@@ -162,18 +162,18 @@ class ComponentView extends Component {
   static renderProgressIndicators() {
     return (
       <div className="component-view__section">
-        <h1 className="header">Progress indicators</h1>
+        <h1 className="title">Progress indicators</h1>
         <div className="row">
           <div className="col-sm-6">
-            <h2 className="subheader">Indeterminate</h2>
+            <h2 className="subtitle">Indeterminate</h2>
             <LinearProgress mode="indeterminate" />
           </div>
           <div className="col-sm-6">
-            <h2 className="subheader">Determinate</h2>
+            <h2 className="subtitle">Determinate</h2>
             <LinearProgress mode="determinate" value={66} />
           </div>
           <div className="col-sm-12">
-            <h2 className="subheader">Round indeterminate</h2>
+            <h2 className="subtitle">Round indeterminate</h2>
             <CircularProgress size={35} />
           </div>
         </div>
@@ -184,7 +184,7 @@ class ComponentView extends Component {
   static renderTextFields() {
     return (
       <div className="component-view__section">
-        <h1 className="header">Text</h1>
+        <h1 className="title">Text</h1>
         <TextField
           hintText="Hint text"
           style={styles.textField}
@@ -201,15 +201,15 @@ class ComponentView extends Component {
   static renderUIFragments() {
     return (
       <div className="component-view__section">
-        <h1 className="header">Statusbar, Navbar, Bottombar</h1>
+        <h1 className="title">Statusbar, Navbar, Bottombar</h1>
 
-        <h2 className="subheader">Statusbar & Navbar</h2>
+        <h2 className="subtitle">Statusbar & Navbar</h2>
         <div>
           <StatusBar />
           <AppBar zDepth={0} title="Settings" />
         </div>
 
-        <h2 className="subheader">Bottombar</h2>
+        <h2 className="subtitle">Bottombar</h2>
         <div>
           <BottomNavigation selectedIndex={2}>
             <BottomNavigationItem
