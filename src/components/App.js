@@ -17,9 +17,9 @@ const App = (props) => (
     <div className="header">
       <div className="header__help">
         <div className="header__help-text">
-          Android Colors — инструмент для создания цветовых схем вашего Android-приложения и их проверки на соответствие
-          принципам Android Material Design. С ним вы увидите, как будут выглядеть основные элементы интерфейса и как
-          они связаны друг с другом.
+          Material Colors — инструмент для создания цветовых схем вашего Android-приложения и их проверки на
+          соответствие принципам Android Material Design. С ним вы увидите, как будут выглядеть основные элементы
+          интерфейса и как они связаны друг с другом.
         </div>
       </div>
       <div className="appbar header__appbar">
