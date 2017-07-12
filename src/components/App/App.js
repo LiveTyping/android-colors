@@ -1,10 +1,16 @@
 import React, { PropTypes } from 'react';
 import 'normalize.css/normalize.css';
 
+<<<<<<< HEAD:src/components/App/App.js
 import ComponentView from '../ComponentView/ComponentView';
 import Palette from '../Palette/Palette';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+=======
+// import AppBar from './AppBar';
+import ComponentView from './ComponentView';
+import Palette from './Palette';
+>>>>>>> Add header:src/components/App.js
 
 import './App.css';
 import ltLogo from '../images/lt-logo@2x.png';
@@ -15,7 +21,31 @@ const propTypes = {
 
 const App = (props) => (
   <div className="app">
+<<<<<<< HEAD:src/components/App/App.js
     <Header />
+=======
+    <div className="header">
+      <div className="header__help">
+        <div className="header__help-text">
+          Android Colors — инструмент для создания цветовых схем вашего Android-приложения и их проверки на соответствие
+          принципам Android Material Design. С ним вы увидите, как будут выглядеть основные элементы интерфейса и как
+          они связаны друг с другом.
+        </div>
+      </div>
+      <div className="appbar header__appbar">
+        <div className="header__appbar-item">
+          <h1 className="appbar__title">Material Colors</h1>
+        </div>
+        <div className="header__appbar-item">
+          <div className="appbar__help">
+            <i className="appbar__help-item appbar__help-item_icon material-icons">help_outline</i>
+            <span className="appbar__help-item">Show Help</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+>>>>>>> Add header:src/components/App.js
     <Palette palette={props.palette} />
     <ComponentView palette={props.palette} />
 <<<<<<< HEAD:src/components/App/App.js

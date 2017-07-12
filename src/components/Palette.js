@@ -27,7 +27,15 @@ const propTypes = {
 
 const Palette = ({ palette }) => (
   <div className="palette">
-    <h1 className="header palette__header">Palette</h1>
+    <h1 className="title palette__title">
+      <span style={{ display: 'inline-block', verticalAlign: 'middle' }}>Palette</span>
+      <i
+        className="material-icons"
+        style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '5px', color: 'slategray' }}
+      >
+        insert_link
+      </i>
+    </h1>
 
     <table className="table palette__table palette__table_with-head" style={{ margin: '0 0 25px 0' }}>
       <thead>

@@ -3,13 +3,13 @@
   flex-flow: row wrap;
 }
 
-.header {
+.title {
   font-size: 24px;
   font-weight: normal;
   color: #f72e1a;
 }
 
-.subheader {
+.subtitle {
   font-size: 14px;
   font-weight: 500;
   color: #545454;
@@ -19,6 +19,69 @@
 .table {
   text-align: left;
   border-spacing: 0;
+}
+
+.header {
+  flex: 1 100%;
+  z-index: 1200;
+  background-color: black;
+  box-shadow: 0 2px 4px 0 rgba(87, 87, 87, 0.50);
+}
+
+.header__help {
+  position: relative;
+  height: 270px;
+}
+
+.header__help:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.header__help-text {
+  color: white;
+  padding: 45px 20px;
+  max-width: 60%;
+  line-height: 1.7em;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+}
+
+.header__appbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.appbar {
+  color: white;
+}
+
+.appbar__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+.appbar__help {
+  font-size: 12px;
+}
+
+.appbar__help-item {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.appbar__help-item:first-child {
+  margin-left: 0;
+}
+
+.appbar__help-item_icon {
+  font-size: 22px;
 }
 
 .footer {
