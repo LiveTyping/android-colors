@@ -31,6 +31,9 @@ const App = (props) => (
           соответствие принципам Android Material Design. С ним вы увидите, как будут выглядеть основные элементы
           интерфейса и как они связаны друг с другом.
         </div>
+        <button className="header__help-close-btn">
+          <i className="header__help-close-btn-icon material-icons">close</i>
+        </button>
       </div>
       <div className="appbar header__appbar">
         <div className="header__appbar-item">

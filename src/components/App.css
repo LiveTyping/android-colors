@@ -49,6 +49,18 @@
   font-size: 20px;
 }
 
+.header__help-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
 .header__appbar {
   display: flex;
   justify-content: space-between;
