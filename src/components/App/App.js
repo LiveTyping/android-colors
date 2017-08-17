@@ -2,11 +2,11 @@ import React, { PropTypes } from 'react';
 import 'normalize.css/normalize.css';
 
 // import AppBar from './AppBar';
-import ComponentView from './ComponentView';
-import Palette from './Palette';
+import ComponentView from '../ComponentView/ComponentView';
+import Palette from '../Palette/Palette';
 
 import './App.css';
-import ltLogo from '../images/lt-logo@2x.png';
+import ltLogo from '../../images/lt-logo@2x.png';
 
 const propTypes = {
   palette: PropTypes.object.isRequired,

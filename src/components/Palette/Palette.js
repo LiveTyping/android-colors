@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import PaletteTile from '../containers/PaletteTile';
+import PaletteTile from '../../containers/PaletteTile';
 import './Palette.css';
 
 const colorNames = {

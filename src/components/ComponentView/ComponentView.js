@@ -13,14 +13,14 @@ import FontIcon from 'material-ui/FontIcon';
 import AppBar from 'material-ui/AppBar';
 import Slider from 'material-ui/Slider';
 
-import StatusBar from '../mui-components/StatusBar';
-import FlatButton from '../mui-components/FlatButton';
-import RaisedButton from '../mui-components/RaisedButton';
-import LinearProgress from '../mui-components/LinearProgress';
-import CircularProgress from '../mui-components/CircularProgress';
+import StatusBar from '../../mui-components/StatusBar';
+import FlatButton from '../../mui-components/FlatButton';
+import RaisedButton from '../../mui-components/RaisedButton';
+import LinearProgress from '../../mui-components/LinearProgress';
+import CircularProgress from '../../mui-components/CircularProgress';
 
-import getMuiTheme from '../lib/getMuiTheme';
-import createCustomMuiTheme from '../lib/createCustomMuiTheme';
+import getMuiTheme from '../../lib/getMuiTheme';
+import createCustomMuiTheme from '../../lib/createCustomMuiTheme';
 
 import './ComponentView.css';
 
