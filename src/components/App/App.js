@@ -8,12 +8,17 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 =======
 // import AppBar from './AppBar';
+<<<<<<< HEAD:src/components/App/App.js
 import ComponentView from './ComponentView';
 import Palette from './Palette';
 >>>>>>> Add header:src/components/App.js
+=======
+import ComponentView from '../ComponentView/ComponentView';
+import Palette from '../Palette/Palette';
+>>>>>>> [*] move components in folders:src/components/App/App.js
 
 import './App.css';
-import ltLogo from '../images/lt-logo@2x.png';
+import ltLogo from '../../images/lt-logo@2x.png';
 
 const propTypes = {
   palette: PropTypes.object.isRequired,

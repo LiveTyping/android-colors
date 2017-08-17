@@ -1,3 +1,5 @@
+/* @TODO вынести стили для хедера и футера в их компоненты  */
+
 .app {
   display: flex;
   flex-flow: row wrap;
