@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import 'normalize.css/normalize.css';
 
-// import AppBar from './AppBar';
 import ComponentView from '../ComponentView/ComponentView';
 import Palette from '../Palette/Palette';
 import Header from '../Header/Header';

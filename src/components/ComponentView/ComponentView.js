@@ -29,7 +29,6 @@ const propTypes = {
 };
 
 const styles = {
-  // left pane
   leftPane: {
     borderRight: '1px solid #dbdbdb',
   },
@@ -54,8 +53,6 @@ const styles = {
     marginTop: '14px',
     marginBottom: '14px',
   },
-
-  // right pane
   textField: {
     width: '92%',
   },
