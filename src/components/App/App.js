@@ -1,8 +1,10 @@
 import React, { PropTypes } from 'react';
+import 'normalize.css/normalize.css';
 
-import AppBar from './AppBar';
-import ComponentView from './ComponentView';
-import Palette from './Palette';
+import ComponentView from '../ComponentView/ComponentView';
+import Palette from '../Palette/Palette';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 import './App.css';
 
@@ -12,9 +14,10 @@ const propTypes = {
 
 const App = (props) => (
   <div className="app">
-    <AppBar />
+    <Header />
     <Palette palette={props.palette} />
     <ComponentView palette={props.palette} />
+    <Footer />
   </div>
 );
 
