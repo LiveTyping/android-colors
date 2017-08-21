@@ -82,6 +82,7 @@
 
 .appbar__help {
   font-size: 12px;
+  color: inherit;
 }
 
 .appbar__help-item {
