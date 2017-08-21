@@ -1,0 +1,184 @@
+/* @TODO вынести стили для хедера и футера в их компоненты  */
+
+.app {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: normal;
+  color: #f72e1a;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #545454;
+  margin: 14px 0 7px;
+}
+
+.table {
+  text-align: left;
+  border-spacing: 0;
+}
+
+.header {
+  flex: 1 100%;
+  z-index: 1200;
+  background-color: black;
+  box-shadow: 0 2px 4px 0 rgba(87, 87, 87, 0.50);
+}
+
+.header__help {
+  position: relative;
+  height: 270px;
+}
+
+.header__help:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.header__help-text {
+  color: white;
+  padding: 45px 20px;
+  max-width: 60%;
+  line-height: 1.7em;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+}
+
+.header__help-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.header__appbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.appbar {
+  color: white;
+}
+
+.appbar__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+.appbar__help {
+  font-size: 12px;
+}
+
+.appbar__help-item {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.appbar__help-item:first-child {
+  margin-left: 0;
+}
+
+.appbar__help-item_icon {
+  font-size: 22px;
+}
+
+.footer {
+  display: flex;
+  flex: 1 100%;
+  order: 3;
+}
+
+.footer__inner {
+  width: 100%;
+}
+
+.credit {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 20px;
+  background-color: black;
+}
+
+.credit-item {
+  color: white;
+  font-size: 11px;
+}
+
+.credit-item__text {
+  display: inline-block;
+  margin-top: 0.2em;
+}
+
+.lt-link {
+  color: white;
+  display: inline-block;
+}
+
+.lt-link__text {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.6em;
+}
+
+.lt-link__image {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.share {
+  background-color: #4688F1;
+  min-height: 138px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.share__header {
+  font-size: 16px;
+  font-weight: normal;
+  color: white;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.share__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.share__list-item {
+  display: inline-block;
+  margin: 5px;
+}
+
+.social-link {
+  display: inline-block;
+  padding: 10px;
+}
+
+.social-logo {
+  fill: #fff;
+  stroke: none;
+  width: 24px;
+  height: 24px;
+  vertical-align: top;
+}

@@ -49,6 +49,7 @@ class PaletteTile extends Component {
     this.state = {
       colorValue: this.props.colorCode.substring(1),
       alphaValue: parseInt(this.props.alpha * 100, 10),
+      editableColorRow: false,
     };
   }
 
@@ -57,6 +58,8 @@ class PaletteTile extends Component {
     const { colorCode, alias } = this.props;
 
     const newColorCode = `#${colorValue}`.toUpperCase();
+
+    this.setState({ editableColorRow: false });
 
     if (newColorCode === colorCode || !isValidColorCode(newColorCode)) {
       this.setState({ colorValue: colorCode.substring(1) });
@@ -68,6 +71,10 @@ class PaletteTile extends Component {
 
   handleInputChange({ target }) {
     this.setState({ colorValue: target.value });
+  }
+
+  handleKeyPress(key) {
+    return key === 'Enter' ? this.handleInputBlur() : null;
   }
 
   render() {
@@ -83,34 +90,24 @@ class PaletteTile extends Component {
         borderColor: colorContrastYIQ < 245 && alphaValue > 5 ? 'transparent' : null,
       },
     };
+    const { editableColorRow } = this.state;
+    const colorRow = editableColorRow
+      ? <input type="text" value={colorValue} onChange={(e) => this.handleInputChange(e)} autoFocus />
+      : `#${colorValue}`;
 
     return (
-      <tr className="palette__table__tr">
+      <tr
+        className="palette__table__tr"
+        role="button"
+        onClick={() => this.setState({ editableColorRow: true })}
+        onBlur={() => this.handleInputBlur()}
+        onKeyPress={({ key }) => this.handleKeyPress(key)}
+      >
         <td className={cellClassName} style={styles.cell}>{name}</td>
-        <td className={cellClassName} style={styles.cell}>#{colorValue}</td>
+        <td className={cellClassName} style={styles.cell}>{colorRow}</td>
         <td className={cellClassName} style={styles.cell}>{alphaValue}%</td>
       </tr>
     );
-
-    // return (
-    //   // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-    //   <div className="tile" style={styles.tile} onClick={() => this.inputRef.focus()}>
-    //     <div className="tile__inner">
-    //       <div className="tile__color-code">
-    //         <input
-    //           className={`tile__color-code-input tile_text-${contrastYIQColor}`}
-    //           type="text"
-    //           value={colorValue}
-    //           onBlur={(evt) => this.handleInputBlur(evt)}
-    //           onChange={(evt) => this.handleInputChange(evt)}
-    //           ref={(input) => { this.inputRef = input; }}
-    //         />
-    //       </div>
-    //       <div className={`tile__alpha tile_text-${contrastYIQColor}`}>{alphaValue}%</div>
-    //       <div className={`tile__name tile_text-${contrastYIQColor}`}>{name}</div>
-    //     </div>
-    //   </div>
-    // );
   }
 }
 
