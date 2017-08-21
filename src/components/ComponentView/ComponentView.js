@@ -25,7 +25,7 @@ import createCustomMuiTheme from '../../lib/createCustomMuiTheme';
 import './ComponentView.css';
 
 const propTypes = {
-  palette: PropTypes.object.isRequired,
+  palette: PropTypes.shape.isRequired,
 };
 
 const styles = {
