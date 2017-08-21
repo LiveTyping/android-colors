@@ -109,6 +109,7 @@ class PaletteTile extends Component {
     return (
       <tr
         className="palette__table__tr"
+        role="button"
         onClick={() => this.handleClick()}
         onBlur={() => this.handleInputBlur()}
         onKeyPress={({ key }) => this.handleKeyPress(key)}
