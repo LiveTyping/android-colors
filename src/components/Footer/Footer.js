@@ -4,7 +4,7 @@ import FacebookIcon from '../FacebookIcon/FacebookIcon';
 import VkIcon from '../VkIcon/VkIcon';
 import GitHubIcon from '../GitHubIcon/GitHubIcon';
 
-const Footer = () =>
+const Footer = () => (
   <div className="footer">
     <div className="footer__inner">
       <div className="share">
@@ -57,6 +57,7 @@ const Footer = () =>
         </div>
       </div>
     </div>
-  </div>;
+  </div>
+);
 
 export default Footer;

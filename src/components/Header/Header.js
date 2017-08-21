@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = () =>
+const Header = () => (
   <div className="header">
     <div className="header__help">
       <div className="header__help-text">
@@ -17,12 +17,18 @@ const Header = () =>
         <h1 className="appbar__title">Material Colors</h1>
       </div>
       <div className="header__appbar-item">
-        <div className="appbar__help">
+        <a
+          href="http://telegra.ph/android-colors-08-17"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="appbar__help"
+        >
           <i className="appbar__help-item appbar__help-item_icon material-icons">help_outline</i>
           <span className="appbar__help-item">Show Help</span>
-        </div>
+        </a>
       </div>
     </div>
-  </div>;
+  </div>
+);
 
 export default Header;
