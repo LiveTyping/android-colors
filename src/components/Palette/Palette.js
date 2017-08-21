@@ -28,10 +28,11 @@ const propTypes = {
       alpha: PropTypes.number,
     })
   ).isRequired,
+  onClickPaletteButton: PropTypes.func.isRequired,
 };
 
 
-const Palette = ({ palette }) => (
+const Palette = ({ palette, onClickPaletteButton }) => (
   <div className="palette">
     <h1 className="title palette__title">
       <span style={{ display: 'inline-block', verticalAlign: 'middle' }}>Palette</span>
@@ -63,6 +64,7 @@ const Palette = ({ palette }) => (
         ))}
       </tbody>
     </table>
+    <button onClick={onClickPaletteButton}>Get Code</button>
   </div>
 );
 

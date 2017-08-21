@@ -6,6 +6,7 @@ import ComponentView from '../ComponentView/ComponentView';
 import Palette from '../Palette/Palette';
 import Footer from '../Footer/Footer';
 import VisibleHeader from '../../containers/VisibleHeader';
+import Modal from '../Modal/Modal';
 
 import './App.css';
 
@@ -16,16 +17,25 @@ const propTypes = {
       alpha: PropTypes.number,
     })
   ).isRequired,
+  isVisibleCodeModal: PropTypes.bool.isRequired,
+  showPaletteCodeModal: PropTypes.func.isRequired,
 };
 
-const App = (props) => (
-  <div className="app">
-    <VisibleHeader />
-    <Palette palette={props.palette} />
-    <ComponentView palette={props.palette} />
-    <Footer />
-  </div>
-);
+const App = ({ palette, showPaletteCodeModal, isVisibleCodeModal }) => {
+  const modal = isVisibleCodeModal
+    ? <Modal />
+    : '';
+  return (
+    <div className="app">
+      {modal}
+      <VisibleHeader />
+      <Palette palette={palette} onClickPaletteButton={showPaletteCodeModal} />
+      <ComponentView palette={palette} />
+      <Footer />
+    </div>
+  );
+};
+
 
 App.propTypes = propTypes;
 
