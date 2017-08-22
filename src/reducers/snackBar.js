@@ -1,25 +1,26 @@
-import { SHOW_CODE_MODAL, CLOSE_CODE_MODAL } from '../actions/modal';
+import { SHOW_SNACK_BAR, CLOSE_SNACK_BAR } from '../actions/snackBar';
 
 const initialState = {
   isVisible: false,
+  text: '',
 };
-
 // eslint-disable-next-line import/prefer-default-export
-export function modal(state = initialState, action) {
-  const { type } = action;
+export function snackBar(state = initialState, action) {
+  const { type, payload } = action;
   switch (type) {
-    case SHOW_CODE_MODAL:
+    case SHOW_SNACK_BAR:
       return {
         ...state,
         isVisible: true,
+        text: payload.text,
       };
-    case CLOSE_CODE_MODAL:
+    case CLOSE_SNACK_BAR:
       return {
         ...state,
         isVisible: false,
+        text: '',
       };
     default:
       return state;
   }
 }
-

@@ -1,29 +1,70 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Dialog from 'material-ui/Dialog';
+import RaisedButton from 'material-ui/RaisedButton';
+import CopyToClipboard from 'react-copy-to-clipboard';
 import './Modal.css';
 
-const code = `<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="Theme.Project" parent="Theme.Project.Base"/>
-    <style name="Theme.Project.Base" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColorPrimary">@drawable/selector_color_primary</item>
-        <item name="android:textColorPrimaryInverse">@color/colorTextPrimaryInverse</item>
-        <item name="android:textColorSecondary">@drawable/selector_color_secondary</item>
-        <item name="android:textColorSecondaryInverse">@color/colorTextSecondaryInverse</item>
-        <item name="colorControlNormal">@color/colorControlNormal</item>
-        <item name="colorControlActivated">@color/colorControlActivated</item>
-        <item name="colorControlHighlight">@color/colorControlHighlight</item>
-        <item name="android:colorButtonNormal">@color/colorButtonNormal</item>
-        <item name="android:textColorHint">@color/textColorHint</item>
-    </style>
-</resources>`;
+const propTypes = {
+  content: PropTypes.shape.isRequired,
+  open: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
 
-const Modal = () => (
-  <div className="modal">
-    {code}
-  </div>
-);
+class Modal extends Component {
+  componentWillMount() {
+    this.setState({
+      modal: true,
+      currentText: this.props.content[0].content,
+      selectedTab: this.props.content[0].name,
+    });
+  }
+
+  changeTab(content, tabName) {
+    this.setState({
+      currentText: content,
+      selectedTab: tabName,
+    });
+  }
+
+  render() {
+    const actions = [
+      <CopyToClipboard text={this.state.currentText} onCopy={() => this.props.onClose(true)}>
+        <RaisedButton label="Copy" labelColor="#fff" backgroundColor="#6c6cf3" style={{ marginRight: '20px' }} />
+      </CopyToClipboard>,
+      <RaisedButton label="Cancel" backgroundColor="#fff" onClick={() => this.props.onClose(false)} />,
+    ];
+
+    const tabs = this.props.content.map((tab) => {
+      const selectedClass = tab.name === this.state.selectedTab ? 'modal__tab--selected' : '';
+      return (
+        <div
+          key={tab.name}
+          tabIndex={0}
+          role="button"
+          className={`modal__tab ${selectedClass}`}
+          onClick={() => this.changeTab(tab.content, tab.name)}
+        >
+          {tab.name}
+        </div>
+      );
+    });
+
+    return (
+      <div className="modal">
+        <Dialog actions={actions} modal={this.state.modal} open={this.props.open}>
+          <div className="modal__tabs">
+            {tabs}
+          </div>
+          <pre>
+            {this.state.currentText}
+          </pre>
+        </Dialog>
+      </div>
+    );
+  }
+}
+
+Modal.propTypes = propTypes;
 
 export default Modal;

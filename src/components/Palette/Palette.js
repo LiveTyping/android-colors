@@ -1,5 +1,6 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import PaletteTile from '../../containers/PaletteTile';
 import './Palette.css';
@@ -64,7 +65,7 @@ const Palette = ({ palette, onClickPaletteButton }) => (
         ))}
       </tbody>
     </table>
-    <button onClick={onClickPaletteButton}>Get Code</button>
+    <RaisedButton label="Get Code" labelColor="#fff" backgroundColor="#6c6cf3" onClick={onClickPaletteButton} />
   </div>
 );
 

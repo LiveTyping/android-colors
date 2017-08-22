@@ -2,3 +2,4 @@
 export { palette } from './palette';
 export { header } from './header';
 export { modal } from './modal';
+export { snackBar } from './snackBar';

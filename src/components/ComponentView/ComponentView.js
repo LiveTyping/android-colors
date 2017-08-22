@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { PropTypes } from 'prop-types';
-
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
+import PropTypes from 'prop-types';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import Toggle from 'material-ui/Toggle';
@@ -19,9 +16,6 @@ import FlatButton from '../../mui-components/FlatButton';
 import RaisedButton from '../../mui-components/RaisedButton';
 import LinearProgress from '../../mui-components/LinearProgress';
 import CircularProgress from '../../mui-components/CircularProgress';
-
-import getMuiTheme from '../../lib/getMuiTheme';
-import createCustomMuiTheme from '../../lib/createCustomMuiTheme';
 
 import './ComponentView.css';
 
@@ -255,20 +249,15 @@ class ComponentView extends Component {
   }
 
   render() {
-    const theme = createCustomMuiTheme(this.props.palette);
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(theme)}>
-        <div className="component-view">
-          <div className="row">
-            {ComponentView.renderLeftPane()}
-            {ComponentView.renderRightPane()}
-          </div>
+      <div className="component-view">
+        <div className="row">
+          {ComponentView.renderLeftPane()}
+          {ComponentView.renderRightPane()}
         </div>
-      </MuiThemeProvider>
+      </div>
     );
   }
 }
-
 ComponentView.propTypes = propTypes;
-
 export default ComponentView;
