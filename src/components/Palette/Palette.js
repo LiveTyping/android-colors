@@ -21,7 +21,7 @@ const colorNames = {
 };
 
 const propTypes = {
-  palette: PropTypes.shape.isRequired,
+  palette: PropTypes.object.isRequired,
 };
 
 
