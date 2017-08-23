@@ -11,6 +11,9 @@ import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-r
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
+import thunk from 'redux-thunk';
+
+
 // TODO drop bootstrap
 import './bootstrap-grid.css';
 
@@ -34,7 +37,8 @@ function initStore(initialState = {}) {
     initialState,
     compose(
       applyMiddleware(
-        routerMiddleware(history)
+        routerMiddleware(history),
+        thunk
       ),
       window.devToolsExtension ? window.devToolsExtension() : (f) => f
     )
