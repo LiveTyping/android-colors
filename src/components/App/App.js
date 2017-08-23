@@ -9,7 +9,7 @@ import Footer from '../Footer/Footer';
 import './App.css';
 
 const propTypes = {
-  palette: PropTypes.shape.isRequired,
+  palette: PropTypes.object.isRequired,
 };
 
 const App = (props) => (
