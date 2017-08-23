@@ -71,7 +71,7 @@ class PaletteTile extends Component {
       return;
     }
 
-    this.props.setPaletteColor(alias, newColorCode);
+    this.props.changePaletteColor(alias, newColorCode);
   }
 
   handleInputChange({ target }) {
