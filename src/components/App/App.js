@@ -3,18 +3,18 @@ import 'normalize.css/normalize.css';
 
 import ComponentView from '../ComponentView/ComponentView';
 import Palette from '../Palette/Palette';
-import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import VisibleHeader from '../../containers/VisibleHeader';
 
 import './App.css';
 
 const propTypes = {
-  palette: PropTypes.object.isRequired,
+  palette: PropTypes.shape.isRequired,
 };
 
 const App = (props) => (
   <div className="app">
-    <Header />
+    <VisibleHeader />
     <Palette palette={props.palette} />
     <ComponentView palette={props.palette} />
     <Footer />
