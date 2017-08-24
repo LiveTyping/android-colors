@@ -25,10 +25,12 @@ if [ -n "$TRAVIS_BUILD_ID" ]; then
   echo GIT_NAME: $GIT_NAME
   echo GIT_EMAIL: $GIT_EMAIL
 
-  if [ "$TRAVIS_BRANCH" != "$DEPLOY_BRANCH" ]; then
+  # if [ "$TRAVIS_BRANCH" != "$DEPLOY_BRANCH" ]; then
+  if false; then
     echo "Travis should only deploy from the DEPLOY_BRANCH ($DEPLOY_BRANCH) branch"
   else
-    if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+    # if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+    if false; then
       echo "Travis should not deploy from pull requests"
     else
       chmod 600 $SSH_KEY

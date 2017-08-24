@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
 import './PaletteTile.css';
 
@@ -46,6 +47,7 @@ function convertToRGBAColor(colorCode, alpha) {
 
 class PaletteTile extends Component {
   componentWillMount() {
+    // eslint-disable-next-line react/no-direct-mutation-state
     this.state = {
       colorValue: this.props.colorCode.substring(1),
       alphaValue: parseInt(this.props.alpha * 100, 10),
@@ -107,7 +109,6 @@ class PaletteTile extends Component {
     return (
       <tr
         className="palette__table__tr"
-        role="button"
         onClick={() => this.handleClick()}
         onBlur={() => this.handleInputBlur()}
         onKeyPress={({ key }) => this.handleKeyPress(key)}

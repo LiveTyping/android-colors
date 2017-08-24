@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
 import MuiFlatButton from 'material-ui/FlatButton';
 
@@ -8,7 +9,6 @@ const contextTypes = {
 
 
 class FlatButton extends Component {
-
   getChildContext() {
     const { context, props } = this;
     const flatButton = Object.assign({}, context.muiTheme.flatButton);
