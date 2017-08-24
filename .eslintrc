@@ -7,9 +7,6 @@
       "classes": true
     }
   },
-  // "plugins": [
-  //   "react"
-  // ],
   "extends": [
     "airbnb",
     "react-app"
@@ -31,7 +28,6 @@
   },
   "settings": {
     "react": {
-      // "createClass": "createReactClass", // Regex for Component Factory to use, default to "createReactClass"
       "pragma": "React",
       "version": "15.6"
     }
