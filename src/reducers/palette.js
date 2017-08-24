@@ -1,4 +1,4 @@
-import { SET_PALETTE_COLOR } from '../actions/palette';
+import { SET_PALETTE_COLOR, SET_NEW_PALETTE } from '../actions/palette';
 
 const initialState = {
   DARK_PRIMARY: { color: '#303F9F', alpha: 1 },
@@ -28,6 +28,8 @@ export function palette(state = initialState, action) {
           state,
           { [payload.name]: { color: payload.colorCode.toUpperCase(), alpha: state[payload.name].alpha } }) :
         Object.assign({}, state);
+    case SET_NEW_PALETTE:
+      return action.payload.palette;
     default:
       return state;
   }

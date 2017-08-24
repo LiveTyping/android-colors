@@ -12,9 +12,6 @@ import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-r
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-import thunk from 'redux-thunk';
-
-
 // TODO drop bootstrap
 import './bootstrap-grid.css';
 
