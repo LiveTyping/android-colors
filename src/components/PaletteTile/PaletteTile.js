@@ -116,6 +116,7 @@ class PaletteTile extends Component {
         <td className={cellClassName} style={styles.cell}>{name}</td>
         <td className={cellClassName} style={styles.cell}>
           <input
+            className="tile__input"
             type="text"
             value={colorValue}
             onChange={(e) => this.handleInputChange(e)}
