@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
 import MuiLinearProgress from 'material-ui/LinearProgress';
 import { lighten } from 'material-ui/utils/colorManipulator';
@@ -9,7 +10,6 @@ const contextTypes = {
 
 
 class LinearProgress extends Component {
-
   getChildContext() {
     const { props, context: { muiTheme } } = this;
     let primary3Color = lighten(muiTheme.palette.NORMAL_CONTROL.color, 0.75);

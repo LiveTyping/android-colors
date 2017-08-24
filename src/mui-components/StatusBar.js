@@ -1,13 +1,14 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
 const propTypes = {
-  date: PropTypes.object.isRequired,
+  date: PropTypes.shape.isRequired,
 };
 const defaultProps = {
   date: new Date(),
 };
 const contextTypes = {
-  muiTheme: PropTypes.object.isRequired,
+  muiTheme: PropTypes.shape.isRequired,
 };
 
 
@@ -44,7 +45,6 @@ function getStyles(props, context) {
 
 
 class StatusBar extends Component {
-
   render() {
     const { date } = this.props;
     const styles = getStyles(this.props, this.context, this.state);

@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -60,7 +61,6 @@ const styles = {
 
 
 class ComponentView extends Component {
-
   static renderButtons() {
     return (
       <div className="component-view__section">

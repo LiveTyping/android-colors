@@ -8,7 +8,8 @@
     }
   },
   "extends": [
-    "airbnb"
+    "airbnb",
+    "react-app"
   ],
   "rules": {
     "arrow-parens": [2, "always"],
@@ -24,5 +25,11 @@
   },
   "env": {
     "browser": true
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "15.6"
+    }
   }
 }
