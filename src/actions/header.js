@@ -20,9 +20,9 @@ export function setHelpBlockHidden() {
 
 export function setInitialHelpBlockVisiblity() {
   const isVisibleHelpBlock = window.localStorage.getItem('isVisibleHeaderHelpBlock') === 'true';
-  const isfirstPageLoad = window.localStorage.getItem('isVisibleHeaderHelpBlock') === null;
+  const isFirstPageLoad = window.localStorage.getItem('isVisibleHeaderHelpBlock') === null;
   return (dispatch) => {
-    if (isfirstPageLoad) {
+    if (isFirstPageLoad) {
       window.localStorage.setItem('isVisibleHeaderHelpBlock', true);
       dispatch(showHeaderHelp());
     } else {
