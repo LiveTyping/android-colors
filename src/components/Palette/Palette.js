@@ -1,5 +1,6 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import PaletteTile from '../../containers/PaletteTile';
 import './Palette.css';
@@ -28,10 +29,11 @@ const propTypes = {
       alpha: PropTypes.number,
     })
   ).isRequired,
+  onClickPaletteButton: PropTypes.func.isRequired,
 };
 
 
-const Palette = ({ palette }) => (
+const Palette = ({ palette, onClickPaletteButton }) => (
   <div className="palette">
     <h1 className="title palette__title">
       <span style={{ display: 'inline-block', verticalAlign: 'middle' }}>Palette</span>
@@ -63,6 +65,8 @@ const Palette = ({ palette }) => (
         ))}
       </tbody>
     </table>
+
+    <RaisedButton label="Get Android color scheme" secondary onClick={onClickPaletteButton} />
   </div>
 );
 

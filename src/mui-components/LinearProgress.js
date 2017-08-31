@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
 
 import MuiLinearProgress from 'material-ui/LinearProgress';
 import { lighten } from 'material-ui/utils/colorManipulator';

@@ -47,12 +47,11 @@ function convertToRGBAColor(colorCode, alpha) {
 
 class PaletteTile extends Component {
   componentWillMount() {
-    // eslint-disable-next-line react/no-direct-mutation-state
-    this.state = {
+    this.setState({
       colorValue: this.props.colorCode.substring(1),
       alphaValue: parseInt(this.props.alpha * 100, 10),
       editableColorRow: false,
-    };
+    });
   }
 
   componentDidUpdate() {
