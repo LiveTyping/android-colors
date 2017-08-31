@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 
 const propTypes = {
-  date: PropTypes.shape.isRequired,
+  date: PropTypes.instanceOf(Date),
 };
 const defaultProps = {
   date: new Date(),
 };
 const contextTypes = {
-  muiTheme: PropTypes.shape.isRequired,
+  muiTheme: PropTypes.object.isRequired,
 };
 
 
