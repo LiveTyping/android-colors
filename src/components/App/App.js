@@ -8,8 +8,8 @@ import ComponentView from '../ComponentView/ComponentView';
 import Palette from '../Palette/Palette';
 import Footer from '../Footer/Footer';
 import VisibleHeader from '../../containers/VisibleHeader';
-import Modal from '../Modal/Modal';
-import getCodeConfigs from './codeConfigs';
+import CopyCodeModal from '../../containers/CopyCodeModal';
+// import getCodeConfigs from './codeConfigs';
 
 import './App.css';
 
@@ -20,58 +20,37 @@ const propTypes = {
       alpha: PropTypes.number,
     })
   ).isRequired,
-  isVisibleCodeModal: PropTypes.bool.isRequired,
   showPaletteCodeModal: PropTypes.func.isRequired,
-  closePaletteCodeModal: PropTypes.func.isRequired,
   isVisibleSnackBar: PropTypes.bool.isRequired,
   snackBarText: PropTypes.string.isRequired,
-  showSnackBarWithText: PropTypes.func.isRequired,
   closeSnackBar: PropTypes.func.isRequired,
 };
 
 const App = ({
   palette,
   showPaletteCodeModal,
-  closePaletteCodeModal,
-  isVisibleCodeModal,
   isVisibleSnackBar,
   snackBarText,
-  showSnackBarWithText,
   closeSnackBar,
-}) => {
-  const codeConfigs = getCodeConfigs(palette);
-
-  function closeModal(isSavedCode) {
-    closePaletteCodeModal();
-    if (isSavedCode) {
-      showSnackBarWithText('Code saved in buffer');
-    }
-  }
-
-  const modal = isVisibleCodeModal
-    ? <Modal content={codeConfigs} open={isVisibleCodeModal} onClose={(isSavedCode) => closeModal(isSavedCode)} />
-    : '';
-
-  return (
-    <MuiThemeProvider>
-      <div className="app">
-        {modal}
-        <VisibleHeader />
-        <Palette palette={palette} onClickPaletteButton={showPaletteCodeModal} />
-        <ComponentView palette={palette} />
-        <Footer />
-        <Snackbar
-          open={isVisibleSnackBar}
-          message={snackBarText}
-          autoHideDuration={4000}
-          onRequestClose={closeSnackBar}
-          bodyStyle={{ backgroundColor: '#fff' }}
-          contentStyle={{ color: '#000' }}
-        />
-      </div>
-    </MuiThemeProvider>
-  );
-};
+}) => (
+  <MuiThemeProvider>
+    <div className="app">
+      <VisibleHeader />
+      <Palette palette={palette} onClickPaletteButton={showPaletteCodeModal} />
+      <ComponentView palette={palette} />
+      <Footer />
+      <CopyCodeModal />
+      <Snackbar
+        open={isVisibleSnackBar}
+        message={snackBarText}
+        autoHideDuration={4000}
+        onRequestClose={closeSnackBar}
+        bodyStyle={{ backgroundColor: '#fff' }}
+        contentStyle={{ color: '#000' }}
+      />
+    </div>
+  </MuiThemeProvider>
+);
 
 App.propTypes = propTypes;
 

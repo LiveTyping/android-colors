@@ -65,7 +65,8 @@ const Palette = ({ palette, onClickPaletteButton }) => (
         ))}
       </tbody>
     </table>
-    <RaisedButton label="Get Code" labelColor="#fff" backgroundColor="#6c6cf3" onClick={onClickPaletteButton} />
+
+    <RaisedButton label="Get Android color scheme" secondary onClick={onClickPaletteButton} />
   </div>
 );
 
