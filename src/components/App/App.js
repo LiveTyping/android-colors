@@ -13,9 +13,6 @@ import getCodeConfigs from './codeConfigs';
 
 import './App.css';
 
-import getMuiTheme from '../../lib/getMuiTheme';
-import createCustomMuiTheme from '../../lib/createCustomMuiTheme';
-
 const propTypes = {
   palette: PropTypes.objectOf(
     PropTypes.shape({
@@ -54,10 +51,9 @@ const App = ({
   const modal = isVisibleCodeModal
     ? <Modal content={codeConfigs} open={isVisibleCodeModal} onClose={(isSavedCode) => closeModal(isSavedCode)} />
     : '';
-  const theme = createCustomMuiTheme(palette);
 
   return (
-    <MuiThemeProvider muiTheme={getMuiTheme(theme)}>
+    <MuiThemeProvider>
       <div className="app">
         {modal}
         <VisibleHeader />

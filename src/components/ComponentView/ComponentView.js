@@ -10,12 +10,15 @@ import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNaviga
 import FontIcon from 'material-ui/FontIcon';
 import AppBar from 'material-ui/AppBar';
 import Slider from 'material-ui/Slider';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import StatusBar from '../../mui-components/StatusBar';
 import FlatButton from '../../mui-components/FlatButton';
 import RaisedButton from '../../mui-components/RaisedButton';
 import LinearProgress from '../../mui-components/LinearProgress';
 import CircularProgress from '../../mui-components/CircularProgress';
+import createCustomMuiTheme from '../../lib/createCustomMuiTheme';
+import getMuiTheme from '../../lib/getMuiTheme';
 
 import './ComponentView.css';
 
@@ -58,7 +61,6 @@ const styles = {
   },
 };
 
-
 class ComponentView extends Component {
   static renderButtons() {
     return (
@@ -78,7 +80,9 @@ class ComponentView extends Component {
         </div>
         <div className="row">
           <div className="col-sm-offset-6 col-sm-6" style={styles.fabWrapper}>
-            <FloatingActionButton><ContentAdd /></FloatingActionButton>
+            <FloatingActionButton>
+              <ContentAdd />
+            </FloatingActionButton>
           </div>
         </div>
 
@@ -106,24 +110,40 @@ class ComponentView extends Component {
           <div className="col-sm-6">
             <h2 className="subtitle">Switch</h2>
             <div className="row">
-              <div className="col-sm-4"><Toggle defaultToggled style={styles.toggle} /></div>
-              <div className="col-sm-4"><Toggle defaultToggled disabled style={styles.toggle} /></div>
+              <div className="col-sm-4">
+                <Toggle defaultToggled style={styles.toggle} />
+              </div>
+              <div className="col-sm-4">
+                <Toggle defaultToggled disabled style={styles.toggle} />
+              </div>
             </div>
             <div className="row">
-              <div className="col-sm-4"><Toggle style={styles.toggle} /></div>
-              <div className="col-sm-4"><Toggle disabled style={styles.toggle} /></div>
+              <div className="col-sm-4">
+                <Toggle style={styles.toggle} />
+              </div>
+              <div className="col-sm-4">
+                <Toggle disabled style={styles.toggle} />
+              </div>
             </div>
           </div>
 
           <div className="col-sm-6">
             <h2 className="subtitle">Checkbox</h2>
             <div className="row">
-              <div className="col-sm-2"><Checkbox defaultChecked style={styles.checkbox} /></div>
-              <div className="col-sm-2"><Checkbox defaultChecked disabled style={styles.checkbox} /></div>
+              <div className="col-sm-2">
+                <Checkbox defaultChecked style={styles.checkbox} />
+              </div>
+              <div className="col-sm-2">
+                <Checkbox defaultChecked disabled style={styles.checkbox} />
+              </div>
             </div>
             <div className="row">
-              <div className="col-sm-2"><Checkbox style={styles.checkbox} /></div>
-              <div className="col-sm-2"><Checkbox disabled style={styles.checkbox} /></div>
+              <div className="col-sm-2">
+                <Checkbox style={styles.checkbox} />
+              </div>
+              <div className="col-sm-2">
+                <Checkbox disabled style={styles.checkbox} />
+              </div>
             </div>
           </div>
 
@@ -181,10 +201,7 @@ class ComponentView extends Component {
     return (
       <div className="component-view__section">
         <h1 className="title">Text</h1>
-        <TextField
-          hintText="Hint text"
-          style={styles.textField}
-        />
+        <TextField hintText="Hint text" style={styles.textField} />
         <TextField
           defaultValue="Input text for a single line text field"
           floatingLabelText="Single-line input label"
@@ -249,13 +266,16 @@ class ComponentView extends Component {
   }
 
   render() {
+    const theme = createCustomMuiTheme(this.props.palette);
     return (
-      <div className="component-view">
-        <div className="row">
-          {ComponentView.renderLeftPane()}
-          {ComponentView.renderRightPane()}
+      <MuiThemeProvider muiTheme={getMuiTheme(theme)}>
+        <div className="component-view">
+          <div className="row">
+            {ComponentView.renderLeftPane()}
+            {ComponentView.renderRightPane()}
+          </div>
         </div>
-      </div>
+      </MuiThemeProvider>
     );
   }
 }
