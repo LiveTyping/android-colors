@@ -22,7 +22,12 @@ const colorNames = {
 };
 
 const propTypes = {
-  palette: PropTypes.shape.isRequired,
+  palette: PropTypes.objectOf(
+    PropTypes.shape({
+      color: PropTypes.string,
+      alpha: PropTypes.number,
+    })
+  ).isRequired,
 };
 
 

@@ -28,6 +28,8 @@
 
 .palette__table__td,
 .palette__table__th {
+  min-width: 120px;
+  height: 55px;
   border-style: solid;
   border-color: #E9E9E9;
   border-width: 1px 0 1px 0;
