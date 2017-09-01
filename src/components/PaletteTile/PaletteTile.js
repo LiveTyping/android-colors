@@ -8,7 +8,7 @@ const propTypes = {
   colorCode: PropTypes.string.isRequired,
   alpha: PropTypes.number.isRequired,
   alias: PropTypes.string.isRequired,
-  setPaletteColor: PropTypes.func.isRequired,
+  changePaletteColor: PropTypes.func.isRequired,
 };
 
 
@@ -54,6 +54,12 @@ class PaletteTile extends Component {
     });
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      colorValue: nextProps.colorCode.substring(1),
+    });
+  }
+
   componentDidUpdate() {
     this.input.focus();
   }
@@ -71,7 +77,7 @@ class PaletteTile extends Component {
       return;
     }
 
-    this.props.setPaletteColor(alias, newColorCode);
+    this.props.changePaletteColor(alias, newColorCode);
   }
 
   handleInputChange({ target }) {

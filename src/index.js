@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 
 import createHashHistory from 'history/createHashHistory';
 import { Route } from 'react-router';
@@ -10,9 +11,6 @@ import { Route } from 'react-router';
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
-
-import thunk from 'redux-thunk';
-
 
 // TODO drop bootstrap
 import './bootstrap-grid.css';

@@ -1,7 +1,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { setPaletteColor } from '../actions/palette';
+import { changePaletteColor } from '../actions/palette';
 import PaletteTile from '../components/PaletteTile/PaletteTile';
 
 
@@ -12,7 +12,7 @@ function mapStateToProps() {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    setPaletteColor,
+    changePaletteColor,
   }, dispatch);
 }
 

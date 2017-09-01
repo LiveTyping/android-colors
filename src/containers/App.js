@@ -2,6 +2,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { showPaletteCodeModal } from '../actions/modal';
 import { closeSnackBar } from '../actions/snackBar';
+import { setInitialPaletteColors, changePaletteColor } from '../actions/palette';
 
 import App from '../components/App/App';
 
@@ -20,6 +21,8 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     showPaletteCodeModal,
     closeSnackBar,
+    setInitialPaletteColors,
+    changePaletteColor,
   }, dispatch);
 }
 
