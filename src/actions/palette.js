@@ -19,7 +19,7 @@ function setNewPalette(palette) {
 
 export function changePaletteColor(name, colorCode) {
   return (dispatch) => {
-    const colorCodeWithoutHash = colorCode.replace('#', '');
+    const colorCodeWithoutHash = colorCode.substring(1);
     const linkContainColorName = doesContainParam(name);
     const separator = window.location.hash.includes('?') ? '&' : '?';
     const newLink = linkContainColorName
