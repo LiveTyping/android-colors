@@ -24,6 +24,8 @@ const propTypes = {
   isVisibleSnackBar: PropTypes.bool.isRequired,
   snackBarText: PropTypes.string.isRequired,
   closeSnackBar: PropTypes.func.isRequired,
+  showSnackBarWithText: PropTypes.func.isRequired,
+  paletteGenneratingUrl: PropTypes.string.isRequired,
 };
 
 const App = ({
@@ -32,11 +34,18 @@ const App = ({
   isVisibleSnackBar,
   snackBarText,
   closeSnackBar,
+  showSnackBarWithText,
+  paletteGenneratingUrl,
 }) => (
   <MuiThemeProvider>
     <div className="app">
       <VisibleHeader />
-      <Palette palette={palette} onClickPaletteButton={showPaletteCodeModal} />
+      <Palette
+        palette={palette}
+        paletteGenneratingUrl={paletteGenneratingUrl}
+        onClickPaletteButton={showPaletteCodeModal}
+        onClickCopyPaletteButton={() => showSnackBarWithText('Link to the Palette successfully copied')}
+      />
       <ComponentView palette={palette} />
       <Footer />
       <CopyCodeModal />

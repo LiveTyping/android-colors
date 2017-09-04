@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
+import CopyToClipboard from 'react-copy-to-clipboard';
 
 import PaletteTile from '../../containers/PaletteTile';
 import './Palette.css';
@@ -30,19 +31,30 @@ const propTypes = {
     })
   ).isRequired,
   onClickPaletteButton: PropTypes.func.isRequired,
+  onClickCopyPaletteButton: PropTypes.func.isRequired,
+  paletteGenneratingUrl: PropTypes.string.isRequired,
 };
 
-
-const Palette = ({ palette, onClickPaletteButton }) => (
+const Palette = ({ palette, onClickPaletteButton, onClickCopyPaletteButton, paletteGenneratingUrl }) => (
   <div className="palette">
     <h1 className="title palette__title">
       <span style={{ display: 'inline-block', verticalAlign: 'middle' }}>Palette</span>
-      <i
-        className="material-icons"
-        style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '5px', color: 'slategray' }}
-      >
-        insert_link
-      </i>
+      <CopyToClipboard onCopy={(onClickCopyPaletteButton)} text={paletteGenneratingUrl}>
+        <i
+          role="button"
+          tabIndex={0}
+          className="material-icons"
+          style={{
+            display: 'inline-block',
+            verticalAlign: 'middle',
+            marginLeft: '5px',
+            color: 'slategray',
+            cursor: 'pointer',
+          }}
+        >
+          insert_link
+        </i>
+      </CopyToClipboard>
     </h1>
 
     <table className="table palette__table palette__table_with-head" style={{ margin: '0 0 25px 0' }}>

@@ -1,7 +1,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { showPaletteCodeModal } from '../actions/modal';
-import { closeSnackBar } from '../actions/snackBar';
+import { closeSnackBar, showSnackBarWithText } from '../actions/snackBar';
 import { setInitialPaletteColors, changePaletteColor } from '../actions/palette';
 
 import App from '../components/App/App';
@@ -13,6 +13,7 @@ function mapStateToProps(state) {
     palette,
     isVisibleSnackBar: snackBar.isVisible,
     snackBarText: snackBar.text,
+    paletteGenneratingUrl: window.location.href,
   };
 }
 
@@ -23,6 +24,7 @@ function mapDispatchToProps(dispatch) {
     closeSnackBar,
     setInitialPaletteColors,
     changePaletteColor,
+    showSnackBarWithText,
   }, dispatch);
 }
 
