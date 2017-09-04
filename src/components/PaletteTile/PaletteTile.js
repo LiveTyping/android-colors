@@ -9,6 +9,7 @@ const propTypes = {
   alpha: PropTypes.number.isRequired,
   alias: PropTypes.string.isRequired,
   changePaletteColor: PropTypes.func.isRequired,
+  setInitialPaletteColors: PropTypes.func.isRequired,
 };
 
 
@@ -52,6 +53,10 @@ class PaletteTile extends Component {
       alphaValue: parseInt(this.props.alpha * 100, 10),
       editableColorRow: false,
     });
+  }
+
+  componentDidMount() {
+    this.props.setInitialPaletteColors();
   }
 
   componentWillReceiveProps(nextProps) {
