@@ -45,7 +45,7 @@ class Modal extends Component {
       </CopyToClipboard>,
     ];
 
-    const tabs = Object.keys(contents).forEach((tabName) => {
+    const tabs = Object.keys(contents).map((tabName) => {
       const className = {
         modal__tab: true,
         'modal__tab--selected': tabName === selectedTab,
