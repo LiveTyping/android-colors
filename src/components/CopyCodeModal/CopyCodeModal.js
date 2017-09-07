@@ -50,7 +50,7 @@ class Modal extends Component {
     const actions = [
       <FlatButton label="Cancel" secondary onClick={() => this.onClose()} />,
       <CopyToClipboard text={currentText} onCopy={() => this.onClose(true)}>
-        <FlatButton label="Copy" parimary />
+        <FlatButton label="Copy" />
       </CopyToClipboard>,
     ];
 

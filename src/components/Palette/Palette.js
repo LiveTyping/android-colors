@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
+import CopyToClipboard from 'react-copy-to-clipboard';
 
 import PaletteTile from '../../containers/PaletteTile';
 import './Palette.css';
@@ -30,19 +31,22 @@ const propTypes = {
     })
   ).isRequired,
   onClickPaletteButton: PropTypes.func.isRequired,
+  onClickCopyPaletteButton: PropTypes.func.isRequired,
+  activePageURL: PropTypes.string.isRequired,
 };
 
-
-const Palette = ({ palette, onClickPaletteButton }) => (
+const Palette = ({ palette, onClickPaletteButton, onClickCopyPaletteButton, activePageURL }) => (
   <div className="palette">
     <h1 className="title palette__title">
-      <span style={{ display: 'inline-block', verticalAlign: 'middle' }}>Palette</span>
-      <i
-        className="material-icons"
-        style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '5px', color: 'slategray' }}
-      >
-        insert_link
-      </i>
+      <span className="palette-title__item">Palette</span>
+      <CopyToClipboard onCopy={onClickCopyPaletteButton} text={activePageURL}>
+        <button
+          className="palette-title__copy-button palette-title__item material-icons"
+          aria-label="Copy Palette link to clipboard"
+        >
+          insert_link
+        </button>
+      </CopyToClipboard>
     </h1>
 
     <table className="table palette__table palette__table_with-head" style={{ margin: '0 0 25px 0' }}>

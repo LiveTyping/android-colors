@@ -73,3 +73,16 @@
 .palette__table__td_text-black {
   color: black;
 }
+
+.palette-title__item {
+  display: inline-block;
+  vertical-align: middle;
+}
+.palette-title__copy-button {
+  margin-left: 5px;
+  color: slategray;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
