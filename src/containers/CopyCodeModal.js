@@ -8,7 +8,6 @@ import getAndroidTheme from '../lib/getAndroidTheme';
 
 function mapStateToProps(state) {
   const { modal, palette } = state;
-  console.log(palette.DARK_PRIMARY);
   return {
     contents: getAndroidTheme(palette),
     isVisibleCodeModal: modal.isVisible,
