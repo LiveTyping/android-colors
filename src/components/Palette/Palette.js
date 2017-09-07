@@ -38,22 +38,14 @@ const propTypes = {
 const Palette = ({ palette, onClickPaletteButton, onClickCopyPaletteButton, activePageURL }) => (
   <div className="palette">
     <h1 className="title palette__title">
-      <span style={{ display: 'inline-block', verticalAlign: 'middle' }}>Palette</span>
-      <CopyToClipboard onCopy={(onClickCopyPaletteButton)} text={activePageURL}>
-        <i
-          role="button"
-          tabIndex={0}
-          className="material-icons"
-          style={{
-            display: 'inline-block',
-            verticalAlign: 'middle',
-            marginLeft: '5px',
-            color: 'slategray',
-            cursor: 'pointer',
-          }}
+      <span className="palette-title__item">Palette</span>
+      <CopyToClipboard onCopy={onClickCopyPaletteButton} text={activePageURL}>
+        <button
+          className="palette-title__copy-button palette-title__item material-icons"
+          aria-label="Copy Palette link to clipboard"
         >
           insert_link
-        </i>
+        </button>
       </CopyToClipboard>
     </h1>
 
