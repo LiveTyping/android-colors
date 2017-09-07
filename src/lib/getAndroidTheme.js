@@ -1,8 +1,6 @@
 export default function getAndroidTheme(palette) {
-  return [
-    {
-      name: 'styles.xml',
-      content: `
+  return {
+    'styles.xml': `
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <color name="colorPrimary">${palette.PRIMARY.color}</color>
@@ -22,11 +20,9 @@ export default function getAndroidTheme(palette) {
   <color name="colorControlHighlight">${palette.HIGHLIGHT_CONTROL.color}</color>
   <color name="colorButtonNormal">${palette.BUTTON_NORMAL.color}</color>
 </resources>
-        `,
-    },
-    {
-      name: 'colors.xml',
-      content: `
+    `,
+
+    'colors.xml': `
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <style name="Theme.Project" parent="Theme.Project.Base"/>
@@ -45,7 +41,6 @@ export default function getAndroidTheme(palette) {
     <item name="android:textColorHint">@color/textColorHint</item>
   </style>
 </resources>
-      `,
-    },
-  ];
+    `,
+  };
 }

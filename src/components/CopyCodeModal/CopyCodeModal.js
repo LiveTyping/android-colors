@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import classNames from 'classnames';
 
 import './CopyCodeModal.css';
 
@@ -10,20 +11,12 @@ const propTypes = {
   isVisibleCodeModal: PropTypes.bool.isRequired,
   closePaletteCodeModal: PropTypes.func.isRequired,
   showSnackBarWithText: PropTypes.func.isRequired,
-  contents: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      content: PropTypes.string,
-    })
-  ).isRequired,
+  contents: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 class Modal extends Component {
   componentWillMount() {
-    this.setState({
-      currentText: this.props.contents[0].content,
-      selectedTab: this.props.contents[0].name,
-    });
+    this.setState({ selectedTab: Object.keys(this.props.contents)[0] });
   }
 
   onClose(copied = false) {
@@ -36,35 +29,36 @@ class Modal extends Component {
     closePaletteCodeModal();
   }
 
-  onTabChange(content, tabName) {
-    this.setState({
-      currentText: content,
-      selectedTab: tabName,
-    });
+  onTabChange(selectedTab) {
+    this.setState({ selectedTab });
   }
 
   render() {
     const { contents, isVisibleCodeModal } = this.props;
-    const { selectedTab, currentText } = this.state;
+    const { selectedTab } = this.state;
+    const content = contents[selectedTab];
 
     const actions = [
       <FlatButton label="Cancel" secondary onClick={() => this.onClose()} />,
-      <CopyToClipboard text={currentText} onCopy={() => this.onClose(true)}>
+      <CopyToClipboard text={content} onCopy={() => this.onClose(true)}>
         <FlatButton label="Copy" />
       </CopyToClipboard>,
     ];
 
-    const tabs = contents.map(({ name, content }) => {
-      const selectedClass = name === selectedTab ? 'modal__tab--selected' : '';
+    const tabs = Object.keys(contents).forEach((tabName) => {
+      const className = {
+        modal__tab: true,
+        'modal__tab--selected': tabName === selectedTab,
+      };
       return (
         <div
-          key={name}
+          key={tabName}
           tabIndex={0}
           role="button"
-          className={`modal__tab ${selectedClass}`}
-          onClick={() => this.onTabChange(content, name)}
+          className={classNames(className)}
+          onClick={() => this.onTabChange(tabName)}
         >
-          {name}
+          {tabName}
         </div>
       );
     });
@@ -78,12 +72,8 @@ class Modal extends Component {
           autoScrollBodyContent
           contentStyle={{ width: '80%', maxWidth: 'none' }}
         >
-          <div className="modal__tabs">
-            {tabs}
-          </div>
-          <pre>
-            {currentText}
-          </pre>
+          <div className="modal__tabs">{tabs}</div>
+          <pre>{content}</pre>
         </Dialog>
       </div>
     );
