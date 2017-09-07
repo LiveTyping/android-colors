@@ -25,7 +25,7 @@ const propTypes = {
   snackBarText: PropTypes.string.isRequired,
   closeSnackBar: PropTypes.func.isRequired,
   showSnackBarWithText: PropTypes.func.isRequired,
-  paletteGenneratingUrl: PropTypes.string.isRequired,
+  activePageURL: PropTypes.string.isRequired,
 };
 
 const App = ({
@@ -35,14 +35,14 @@ const App = ({
   snackBarText,
   closeSnackBar,
   showSnackBarWithText,
-  paletteGenneratingUrl,
+  activePageURL,
 }) => (
   <MuiThemeProvider>
     <div className="app">
       <VisibleHeader />
       <Palette
         palette={palette}
-        paletteGenneratingUrl={paletteGenneratingUrl}
+        activePageURL={activePageURL}
         onClickPaletteButton={showPaletteCodeModal}
         onClickCopyPaletteButton={() => showSnackBarWithText('Link to the Palette successfully copied')}
       />

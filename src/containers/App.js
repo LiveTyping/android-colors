@@ -13,7 +13,7 @@ function mapStateToProps(state) {
     palette,
     isVisibleSnackBar: snackBar.isVisible,
     snackBarText: snackBar.text,
-    paletteGenneratingUrl: window.location.href,
+    activePageURL: window.location.href,
   };
 }
 

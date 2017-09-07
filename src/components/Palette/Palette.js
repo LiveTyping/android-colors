@@ -32,14 +32,14 @@ const propTypes = {
   ).isRequired,
   onClickPaletteButton: PropTypes.func.isRequired,
   onClickCopyPaletteButton: PropTypes.func.isRequired,
-  paletteGenneratingUrl: PropTypes.string.isRequired,
+  activePageURL: PropTypes.string.isRequired,
 };
 
-const Palette = ({ palette, onClickPaletteButton, onClickCopyPaletteButton, paletteGenneratingUrl }) => (
+const Palette = ({ palette, onClickPaletteButton, onClickCopyPaletteButton, activePageURL }) => (
   <div className="palette">
     <h1 className="title palette__title">
       <span style={{ display: 'inline-block', verticalAlign: 'middle' }}>Palette</span>
-      <CopyToClipboard onCopy={(onClickCopyPaletteButton)} text={paletteGenneratingUrl}>
+      <CopyToClipboard onCopy={(onClickCopyPaletteButton)} text={activePageURL}>
         <i
           role="button"
           tabIndex={0}
