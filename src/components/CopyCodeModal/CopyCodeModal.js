@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import classNames from 'classnames';
 
+import ModalTab from './ModalTab';
 import './CopyCodeModal.css';
+
 
 const propTypes = {
   isVisibleCodeModal: PropTypes.bool.isRequired,
@@ -19,10 +20,6 @@ class Modal extends Component {
     this.setState({ selectedTab: Object.keys(this.props.contents)[0] });
   }
 
-  onTabChange = (evt, { eventKey: selectedTab }) => {
-    this.setState({ selectedTab });
-  }
-
   onClose = () => {
     this.props.closePaletteCodeModal();
   }
@@ -30,6 +27,10 @@ class Modal extends Component {
   onCopyClick = () => {
     this.props.showSnackBarWithText('Copied');
     this.onClose();
+  }
+
+  onTabChange = (selectedTab) => {
+    this.setState({ selectedTab });
   }
 
   render() {
@@ -44,23 +45,14 @@ class Modal extends Component {
       </CopyToClipboard>,
     ];
 
-    const tabs = Object.keys(contents).map((tabName) => {
-      const className = {
-        modal__tab: true,
-        'modal__tab--selected': tabName === selectedTab,
-      };
-      return (
-        <div
-          key={tabName}
-          tabIndex={0}
-          role="button"
-          className={classNames(className)}
-          onClick={this.onTabChange}
-        >
-          {tabName}
-        </div>
-      );
-    });
+    const tabs = Object.keys(contents).map((tabName) => (
+      <ModalTab
+        key={tabName}
+        name={tabName}
+        selected={tabName === selectedTab}
+        onClick={this.onTabChange}
+      />
+    ));
 
     return (
       <div className="modal">
