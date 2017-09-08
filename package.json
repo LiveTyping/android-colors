@@ -4,6 +4,7 @@
   "homepage": "https://livetyping.github.io/android-colors/",
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "classnames": "^2.2.5",
     "history": "^4.6.1",
     "material-ui": "^0.17.1",
     "normalize.css": "^7.0.0",
