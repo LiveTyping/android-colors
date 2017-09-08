@@ -19,18 +19,17 @@ class Modal extends Component {
     this.setState({ selectedTab: Object.keys(this.props.contents)[0] });
   }
 
-  onClose(copied = false) {
-    const { closePaletteCodeModal, showSnackBarWithText } = this.props;
-
-    if (copied) {
-      showSnackBarWithText('Code saved in buffer');
-    }
-
-    closePaletteCodeModal();
+  onTabChange = (evt, { eventKey: selectedTab }) => {
+    this.setState({ selectedTab });
   }
 
-  onTabChange(selectedTab) {
-    this.setState({ selectedTab });
+  onClose = () => {
+    this.props.closePaletteCodeModal();
+  }
+
+  onCopyClick = () => {
+    this.props.showSnackBarWithText('Copied');
+    this.onClose();
   }
 
   render() {
@@ -39,8 +38,8 @@ class Modal extends Component {
     const content = contents[selectedTab];
 
     const actions = [
-      <FlatButton label="Cancel" secondary onClick={() => this.onClose()} />,
-      <CopyToClipboard text={content} onCopy={() => this.onClose(true)}>
+      <FlatButton label="Cancel" secondary onClick={this.onClose} />,
+      <CopyToClipboard text={content} onCopy={this.onCopyClick}>
         <FlatButton label="Copy" />
       </CopyToClipboard>,
     ];
@@ -56,7 +55,7 @@ class Modal extends Component {
           tabIndex={0}
           role="button"
           className={classNames(className)}
-          onClick={() => this.onTabChange(tabName)}
+          onClick={this.onTabChange}
         >
           {tabName}
         </div>
