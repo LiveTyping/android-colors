@@ -3,12 +3,13 @@ import ltLogo from '../../images/lt-logo@2x.png';
 import FacebookIcon from '../FacebookIcon/FacebookIcon';
 import VkIcon from '../VkIcon/VkIcon';
 import GitHubIcon from '../GitHubIcon/GitHubIcon';
+import Language from '../../services/Language';
 
 const Footer = () => (
   <div className="footer">
     <div className="footer__inner">
       <div className="share">
-        <h4 className="share__header">Share this with your friends</h4>
+        <h4 className="share__header">{Language().textShareWithFriends}</h4>
         <ul className="share__list">
           <li className="share__list-item">
             <a
@@ -48,7 +49,7 @@ const Footer = () => (
       <div className="credit">
         <div className="credit-item">
           <a className="lt-link" href="https://livetyping.com" target="_blank" rel="noopener noreferrer">
-            <span className="lt-link__text">Made by</span>
+            <span className="lt-link__text">{Language().textMadeBy}</span>
             <img className="lt-link__image" src={ltLogo} alt="Live Typing" width="115px" />
           </a>
         </div>

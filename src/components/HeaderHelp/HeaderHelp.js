@@ -9,7 +9,7 @@ const propTypes = {
 const HeaderHelp = ({ onClose }) => (
   <div className="header__help header__help--hidden">
     <div className="header__help-text">
-      {Language().helpText}
+      {Language().textHelp}
     </div>
     <button className="header__help-close-btn" onClick={onClose}>
       <i className="header__help-close-btn-icon material-icons">close</i>
