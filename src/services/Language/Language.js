@@ -4,14 +4,10 @@ import Strings from './strings';
 const Language = () => {
   const userLang = window.navigator.language;
   // if user local language is English - return text on English language
-  if (userLang.match(/^en/g)) {
-    return Strings.en;
-  }
+  if (userLang.match(/^en/g)) return Strings.en;
   // if user local language is Russian - return text on Russian language
-  else if (userLang.match(/^ru/g)) {
-    return Strings.ru;
-  }
-
-}
+  else if (userLang.match(/^ru/g)) return Strings.ru;
+  return false;
+};
 
 export default Language;

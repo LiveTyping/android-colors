@@ -1,3 +1,6 @@
+/*
+  eslint max-len: ["error", { "ignoreStrings": true }]
+*/
 const Strings = {
   // English language
   en: {
@@ -7,8 +10,8 @@ const Strings = {
     textShareWithFriends: 'Share this with your friends',
     btn: {
       showHelp: 'Show Help',
-      getAndroidColorScheme: 'Get Android Color Scheme'
-    }
+      getAndroidColorScheme: 'Get Android Color Scheme',
+    },
   },
   // Russian language
   ru: {
@@ -18,9 +21,9 @@ const Strings = {
     textShareWithFriends: 'Поделись с друзьями',
     btn: {
       showHelp: 'Помощь',
-      getAndroidColorScheme: 'Сгенерировать цветовую схему Android'
-    }
-  }
-}
+      getAndroidColorScheme: 'Сгенерировать цветовую схему Android',
+    },
+  },
+};
 
 export default Strings;
