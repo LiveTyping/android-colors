@@ -1,5 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import Language from '../../services/Language';
 
 const propTypes = {
   onClose: PropTypes.func.isRequired,
@@ -8,9 +9,7 @@ const propTypes = {
 const HeaderHelp = ({ onClose }) => (
   <div className="header__help header__help--hidden">
     <div className="header__help-text">
-      Material Colors — инструмент для создания цветовых схем вашего Android-приложения и их проверки на
-      соответствие принципам Android Material Design. С ним вы увидите, как будут выглядеть основные элементы
-      интерфейса и как они связаны друг с другом.
+      {Language().textHelp}
     </div>
     <button className="header__help-close-btn" onClick={onClose}>
       <i className="header__help-close-btn-icon material-icons">close</i>

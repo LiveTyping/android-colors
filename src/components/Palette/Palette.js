@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
 import CopyToClipboard from 'react-copy-to-clipboard';
-
+import Language from '../../services/Language';
 import PaletteTile from '../../containers/PaletteTile';
 import './Palette.css';
 
@@ -38,7 +38,7 @@ const propTypes = {
 const Palette = ({ palette, onClickPaletteButton, onClickCopyPaletteButton, activePageURL }) => (
   <div className="palette">
     <h1 className="title palette__title">
-      <span className="palette-title__item">Palette</span>
+      <span className="palette-title__item">{Language().titlePalette}</span>
       <CopyToClipboard onCopy={onClickCopyPaletteButton} text={activePageURL}>
         <button
           className="palette-title__copy-button palette-title__item material-icons"
@@ -70,7 +70,7 @@ const Palette = ({ palette, onClickPaletteButton, onClickCopyPaletteButton, acti
       </tbody>
     </table>
 
-    <RaisedButton label="Get Android color scheme" secondary onClick={onClickPaletteButton} />
+    <RaisedButton label={Language().btn.getAndroidColorScheme} secondary onClick={onClickPaletteButton} />
   </div>
 );
 
