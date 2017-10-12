@@ -1,6 +1,6 @@
 export default function getAndroidTheme(palette) {
   return {
-    'styles.xml': `
+    'colors.xml': `
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <color name="colorPrimary">${palette.PRIMARY.color}</color>
@@ -22,7 +22,7 @@ export default function getAndroidTheme(palette) {
 </resources>
     `,
 
-    'colors.xml': `
+    'styles.xml': `
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <style name="Theme.Project" parent="Theme.Project.Base"/>
