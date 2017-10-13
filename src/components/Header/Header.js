@@ -17,10 +17,9 @@ const Header = ({ isVisibleHelp, onCloseHelp }) => {
           <h1 className="appbar__title">Material Colors</h1>
         </div>
         <div className="header__appbar-item">
-          <div className="appbar__help">
+          <button className="header__appbar__btn-help">
             <i className="appbar__help-item appbar__help-item_icon material-icons">help_outline</i>
-            <span className="appbar__help-item">Show Help</span>
-          </div>
+          </button>
         </div>
       </div>
     </div>

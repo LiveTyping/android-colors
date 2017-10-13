@@ -24,7 +24,8 @@
 }
 
 .header {
-  flex: 1 100%;
+  position: relative;
+  padding-bottom: 60px;
   z-index: 1200;
   background-color: black;
   box-shadow: 0 2px 4px 0 rgba(87, 87, 87, 0.50);
@@ -32,7 +33,7 @@
 
 .header__help {
   position: relative;
-  height: 270px;
+  min-height: 270px;
 }
 
 .header__help:after {
@@ -42,13 +43,57 @@
   right: 0;
 }
 
+.header__help__wrapper {
+  min-height: 270px;
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+}
+
 .header__help-text {
   color: white;
   padding: 45px 20px;
-  max-width: 60%;
+  width: 60%;
   line-height: 1.7em;
   font-family: 'Roboto Mono', monospace;
   font-size: 20px;
+}
+
+.haeder__help__img_box {
+  width: 40%;
+  position: relative;
+}
+
+.haeder__help__img_box-img {
+  position: absolute;
+  max-height: 100%;
+  max-width: 100%;
+  right: 20px;
+  bottom: -60px;
+}
+
+@media (max-width: 992px) {
+  .header__help__wrapper {
+    flex-direction: column;
+  }
+  .header__help-text, .haeder__help__img_box {
+    width: 100%;
+  }
+  .haeder__help__img_box {
+    height: 330px;
+    text-align: center;
+  }
+  .haeder__help__img_box-img {
+    position: relative;
+    height: 100%;
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .haeder__help__img_box {
+    display: none;
+  }
 }
 
 .header__help-close-btn {
@@ -64,6 +109,11 @@
 }
 
 .header__appbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -71,6 +121,7 @@
 
 .appbar {
   color: white;
+  clear: both;
 }
 
 .appbar__title {
@@ -81,6 +132,7 @@
 }
 
 .appbar__help {
+  margin-top: -10px;
   font-size: 12px;
   color: inherit;
 }
@@ -95,8 +147,23 @@
   margin-left: 0;
 }
 
-.appbar__help-item_icon {
+.header__appbar__btn-help {
+  margin-top: -10px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: none;
+  border-radius: 100%;
+  color: black;
   font-size: 22px;
+  text-align: center;
+  transition: background-color 0.1s ease;
+  outline: none;
+}
+
+.header__appbar__btn-help:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
 }
 
 .footer {
