@@ -24,6 +24,7 @@
 }
 
 .header {
+  width: 100%;
   position: relative;
   padding-bottom: 60px;
   z-index: 1200;
