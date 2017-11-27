@@ -5,10 +5,19 @@ import HeaderHelp from '../HeaderHelp/HeaderHelp';
 const propTypes = {
   isVisibleHelp: PropTypes.bool.isRequired,
   onCloseHelp: PropTypes.func.isRequired,
+  onShowHelp: PropTypes.func.isRequired,
 };
 
-const Header = ({ isVisibleHelp, onCloseHelp }) => {
-  const helpBlock = isVisibleHelp ? <HeaderHelp onClose={onCloseHelp} /> : '';
+const Header = ({ isVisibleHelp, onCloseHelp, onShowHelp }) => {
+  const helpBlock = isVisibleHelp ? <HeaderHelp onClose={onCloseHelp} /> : null;
+  const helpButton = isVisibleHelp ? null : (
+    <div className="header__appbar-item">
+      <button className="header__appbar__btn-help" onClick={onShowHelp}>
+        <i className="appbar__help-item appbar__help-item_icon material-icons">help_outline</i>
+      </button>
+    </div>
+  );
+
   return (
     <div className="header">
       {helpBlock}
@@ -16,11 +25,7 @@ const Header = ({ isVisibleHelp, onCloseHelp }) => {
         <div className="header__appbar-item">
           <h1 className="appbar__title">Material Colors</h1>
         </div>
-        <div className="header__appbar-item">
-          <button className="header__appbar__btn-help">
-            <i className="appbar__help-item appbar__help-item_icon material-icons">help_outline</i>
-          </button>
-        </div>
+        {helpButton}
       </div>
     </div>
   );
