@@ -17,10 +17,10 @@ export default function getAndroidTheme(palette) {
   <color name="textColorHint">${palette.HINT_TEXT.color}</color>
   <color name="colorControlNormal">${palette.NORMAL_CONTROL.color}</color>
   <color name="colorControlActivated">${palette.ACTIVATED_CONTROL.color}</color>
-  <color name="colorControlHighlight">${palette.HIGHLIGHT_CONTROL.color}</color>
   <color name="colorButtonNormal">${palette.BUTTON_NORMAL.color}</color>
 </resources>
     `,
+    // <color name="colorControlHighlight">${palette.HIGHLIGHT_CONTROL.color}</color>
 
     'styles.xml': `
 <?xml version="1.0" encoding="utf-8"?>
@@ -36,11 +36,11 @@ export default function getAndroidTheme(palette) {
     <item name="android:textColorSecondaryInverse">@color/colorTextSecondaryInverse</item>
     <item name="colorControlNormal">@color/colorControlNormal</item>
     <item name="colorControlActivated">@color/colorControlActivated</item>
-    <item name="colorControlHighlight">@color/colorControlHighlight</item>
     <item name="android:colorButtonNormal">@color/colorButtonNormal</item>
     <item name="android:textColorHint">@color/textColorHint</item>
   </style>
 </resources>
     `,
+    // <item name="colorControlHighlight">@color/colorControlHighlight</item>
   };
 }
