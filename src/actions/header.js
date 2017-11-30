@@ -18,6 +18,10 @@ export function setHelpBlockHidden() {
   return (dispatch) => dispatch(hideHeaderHelp());
 }
 
+export function setHelpBlockVisible() {
+  return (dispatch) => dispatch(showHeaderHelp());
+}
+
 export function setInitialHelpBlockVisiblity() {
   const isVisibleHelpBlock = window.localStorage.getItem('isVisibleHeaderHelpBlock') === 'true';
   const isFirstPageLoad = window.localStorage.getItem('isVisibleHeaderHelpBlock') === null;

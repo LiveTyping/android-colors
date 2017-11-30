@@ -13,7 +13,7 @@ const initialState = {
   HINT_TEXT: { color: '#9E9E9E', alpha: 0.38 },
   NORMAL_CONTROL: { color: '#89089B', alpha: 1 },
   ACTIVATED_CONTROL: { color: '#69FF4B', alpha: 1 },
-  HIGHLIGHT_CONTROL: { color: '#CCCCCC', alpha: 1 },
+  // HIGHLIGHT_CONTROL: { color: '#CCCCCC', alpha: 1 },
   BUTTON_NORMAL: { color: '#6D6D6D', alpha: 1 },
 };
 
