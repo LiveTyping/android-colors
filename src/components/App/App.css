@@ -77,21 +77,9 @@
   .header__help__wrapper {
     flex-direction: column;
   }
-  .header__help-text, .haeder__help__img_box {
+  .header__help-text{
     width: 100%;
   }
-  .haeder__help__img_box {
-    height: 330px;
-    text-align: center;
-  }
-  .haeder__help__img_box-img {
-    position: relative;
-    height: 100%;
-    right: 0;
-  }
-}
-
-@media (max-width: 768px) {
   .haeder__help__img_box {
     display: none;
   }
