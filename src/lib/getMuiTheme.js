@@ -372,8 +372,8 @@ export default function getMuiTheme(muiTheme, ...more) {
       // borderColor: borderColor,
 
       textColor: PRIMARY_TEXT.color,
-      hintColor: HINT_TEXT.color,
-      floatingLabelColor: HINT_TEXT.color,
+      hintColor: fade(HINT_TEXT.color, HINT_TEXT.alpha),
+      floatingLabelColor: fade(HINT_TEXT.color, HINT_TEXT.alpha),
       disabledTextColor: disabledColor,
       errorColor: red500,
       focusColor: ACTIVATED_CONTROL.color,
