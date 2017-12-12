@@ -73,7 +73,7 @@ export default function getMuiTheme(muiTheme, ...more) {
       // selectedFontSize: 14,
 
       backgroundColor: canvasColor,
-      unselectedColor: SECONDARY_TEXT.color,
+      unselectedColor: fade(SECONDARY_TEXT.color, SECONDARY_TEXT.alpha),
       selectedColor: PRIMARY.color,
       height: 56,
       unselectedFontSize: 12,
@@ -151,12 +151,12 @@ export default function getMuiTheme(muiTheme, ...more) {
       color: transparent,
       buttonFilterColor: '#999999',
       // NORMAL FLAT BUTTON
-      textColor: PRIMARY_TEXT.color,
-      disabledTextColor: DISABLED_PRIMARY_TEXT.color,
+      textColor: fade(PRIMARY_TEXT.color, PRIMARY_TEXT.alpha),
+      disabledTextColor: fade(DISABLED_PRIMARY_TEXT.color, DISABLED_PRIMARY_TEXT.alpha),
       // COLORED FLAT BUTTON
       primaryTextColor: ACCENT.color,
       // @NOTE this color is being handled in RasiedButtonWrapper
-      disabledPrimaryTextColor: lighten(SECONDARY_TEXT.color, 0.75),
+      disabledPrimaryTextColor: fade(SECONDARY_TEXT.color, SECONDARY_TEXT.alpha),
       // TYPOGRAPHY
       fontSize: typography.fontStyleButtonFontSize,
       fontWeight: typography.fontWeightMedium,
@@ -175,7 +175,7 @@ export default function getMuiTheme(muiTheme, ...more) {
       color: ACCENT.color,
       iconColor: INVERSED_PRIMARY_TEXT.color,
       disabledColor: lighten(BUTTON_NORMAL.color, 0.75),
-      disabledTextColor: lighten(PRIMARY_TEXT.color, 0.75),
+      disabledTextColor: lighten(PRIMARY_TEXT.color, PRIMARY_TEXT.alpha),
       // TYPOGRAPHY
       buttonSize: 56,
       miniSize: 40,
@@ -261,9 +261,9 @@ export default function getMuiTheme(muiTheme, ...more) {
 
       // NORMAL RAISED BUTTON
       color: BUTTON_NORMAL.color,
-      textColor: PRIMARY_TEXT.color,
+      textColor: fade(PRIMARY_TEXT.color, PRIMARY_TEXT.alpha),
       disabledColor: BUTTON_NORMAL.color,
-      disabledTextColor: DISABLED_PRIMARY_TEXT.color,
+      disabledTextColor: fade(DISABLED_PRIMARY_TEXT.color, DISABLED_PRIMARY_TEXT.alpha),
       // COLORED RAISED BUTTON
       primaryColor: ACCENT.color,
       primaryTextColor: INVERSED_PRIMARY_TEXT.color,
@@ -371,7 +371,7 @@ export default function getMuiTheme(muiTheme, ...more) {
       // backgroundColor: 'transparent',
       // borderColor: borderColor,
 
-      textColor: PRIMARY_TEXT.color,
+      textColor: fade(PRIMARY_TEXT.color, PRIMARY_TEXT.alpha),
       hintColor: fade(HINT_TEXT.color, HINT_TEXT.alpha),
       floatingLabelColor: fade(HINT_TEXT.color, HINT_TEXT.alpha),
       disabledTextColor: disabledColor,
